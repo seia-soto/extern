@@ -1,6 +1,6 @@
 # er-api
 
-An EternalReturn OpenAPI client.
+An EternalReturn Open API client.
 
 **Features**
 
@@ -41,3 +41,9 @@ This integration can be disabled by omitting the `queue` property of constructor
 ```ts
 const client = new ErClient(undefined, {});
 ```
+
+# LICENSE
+
+The client library is distributed under MIT license.
+
+The EternalReturn assets included in this repository are the property of Nimble Neuron Corp.
