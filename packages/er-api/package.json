@@ -1,0 +1,27 @@
+{
+  "name": "er-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+		"prebuild": "node --import=tsimp/import scripts/prebuildMetadata.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "HoJeong Go <seia@outlook.kr>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": ">=7.0.2",
+    "@typescript-eslint/parser": ">=7.0.2",
+    "eslint": ">=8.56.0",
+    "eslint-config-xo": "^0.44.0",
+    "eslint-config-xo-typescript": "^4.0.0",
+    "tsimp": "^2.0.11",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "ky": "^1.2.2"
+  }
+}
