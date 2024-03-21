@@ -87,7 +87,7 @@ export class ErClientQueue {
 
 export class ErClient {
 	public fetcher: KyInstance;
-	public queue: ErClientQueue;
+	public queue?: ErClientQueue;
 
 	public getMetaTypes: typeof getMetaTypes;
 	public getMetaData: typeof getMetaData;
@@ -95,7 +95,7 @@ export class ErClient {
 	constructor(
 		apiKey: string = process.env.ER_API_KEY ?? '',
 		options: {
-			queue: ErClientQueue;
+			queue?: ErClientQueue;
 		} = {
 			queue: new ErClientQueue({
 				size: 1,
@@ -111,7 +111,10 @@ export class ErClient {
 				'x-api-key': apiKey,
 			},
 		});
-		this.queue = options.queue;
+
+		if (options.queue) {
+			this.queue = options.queue;
+		}
 
 		this.getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
 		this.getMetaData = this.createRateLimitedFunction(getMetaData);
@@ -119,6 +122,11 @@ export class ErClient {
 
 	private createRateLimitedFunction<T extends Fn, R = Awaited<ReturnType<T>>>(fn: T) {
 		const callee = fn.bind(this);
+
+		if (!this.queue) {
+			return callee;
+		}
+
 		const wrapper = async (...args: Parameters<T>): Promise<R> => new Promise<R>((resolve, reject) => {
 			const callback = async () => {
 				callee(...args)
@@ -130,7 +138,7 @@ export class ErClient {
 					});
 			};
 
-			void this.queue.enqueue(callback);
+			void this.queue!.enqueue(callback);
 		});
 
 		return wrapper;
