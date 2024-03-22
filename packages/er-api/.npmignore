@@ -1,3 +1,5 @@
+/.tsimp/
+/resources/
 /scripts/
 /.eslintrc.cjs
 /.gitignore
