@@ -1,9 +1,9 @@
 import {writeFile} from 'fs/promises';
-import {ErClient} from '../index.js';
+import {ErApi} from '../api/index.js';
 import {type ErMetaTypes} from '../types/__generated__/erMetaTypes.js';
 
 const writeErMetaTypes = async () => {
-	const client = new ErClient();
+	const client = new ErApi();
 
 	const metaTypesResponse = await client.getMetaTypes();
 	const metaTypes = Object.keys(metaTypesResponse.data) as ErMetaTypes[];

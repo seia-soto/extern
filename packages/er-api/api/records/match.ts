@@ -1,5 +1,5 @@
 import QueryString from 'qs';
-import {type ErClient} from '../../index.js';
+import {type ErApi} from '../index.js';
 import {
 	type ErDamageTypes, type ErLanguages, type ErMatchModes, type ErPlayerTypes,
 } from '../../types/constants.js';
@@ -250,12 +250,12 @@ export type ErMatchByUserIdResponse = ErEmptyResponse & {
 
 /**
  * Get matches joined by the user
- * @param this ErClient
+ * @param this ErApi
  * @param userId The user id to query matches
  * @param next An optional pagination parameter can be retrieved by a previous request
  * @returns An array of the match joined by the user
  */
-export async function getMatchesByUserId(this: ErClient, userId: number, next?: number) {
+export async function getMatchesByUserId(this: ErApi, userId: number, next?: number) {
 	let url = `user/games/${userId}`;
 
 	if (next !== undefined) {
@@ -272,12 +272,12 @@ export async function getMatchesByUserId(this: ErClient, userId: number, next?: 
 
 /**
  * Get match data in each participated user's perspective by the given match id
- * @param this ErClient
+ * @param this ErApi
  * @param matchId The match id
  * @param next An optional pagination parameter can be retrieved by a previous request
  * @returns An array of match data in each participated user's perspective
  */
-export async function getMatchesByMatchId(this: ErClient, matchId: number, next?: number) {
+export async function getMatchesByMatchId(this: ErApi, matchId: number, next?: number) {
 	let url = `games/${matchId}`;
 
 	if (next !== undefined) {

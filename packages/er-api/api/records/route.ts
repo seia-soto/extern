@@ -1,5 +1,5 @@
 import QueryString from 'qs';
-import {type ErClient} from '../..';
+import {type ErApi} from '../index.js';
 import {type ErEmptyResponse} from '../../types/index.js';
 import {type JsonLiteral} from '../../types/utils.js';
 
@@ -42,11 +42,11 @@ export type ErRouteResponse = ErEmptyResponse & {
 
 /**
  * Get a route by id
- * @param this ErClient
+ * @param this ErApi
  * @param routeId The route id to query
  * @returns The route with its data
  */
-export async function getRoute(this: ErClient, routeId: number) {
+export async function getRoute(this: ErApi, routeId: number) {
 	const response = await this.fetcher.get(`weaponRoutes/recommend/${routeId}`);
 	const json = await response.json<ErRouteResponse>();
 
@@ -59,11 +59,11 @@ export type ErRecommendedRoutesResponse = ErEmptyResponse & {
 
 /**
  * Get recommended routes
- * @param this ErClient
+ * @param this ErApi
  * @param next An optional pagination parameter can be retrieved by a previous request
  * @returns An array of recommended routes
  */
-export async function getRecommendedRoutes(this: ErClient, next?: number) {
+export async function getRecommendedRoutes(this: ErApi, next?: number) {
 	let url = 'weaponRoutes/recommend';
 
 	if (next !== undefined) {
