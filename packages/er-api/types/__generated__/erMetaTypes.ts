@@ -145,7 +145,7 @@ export type ErMetaTypes = 'Achievement' |
 'WeaponMount' |
 'WeaponRoute' |
 'WeaponTypeInfo' |
-(string & {});
+(string & {__erType: 'erMetaTypes'});
 
 export type ErMetaDataAchievement = {
 	code: number;

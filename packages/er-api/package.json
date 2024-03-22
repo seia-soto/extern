@@ -5,7 +5,7 @@
   "main": "out/index.js",
   "type": "module",
   "scripts": {
-		"build": "tsc",
+    "build": "tsc",
     "prebuild": "node --import=tsimp/import scripts/prebuildMetadata.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.30",
+    "@types/qs": "^6.9.14",
     "@typescript-eslint/eslint-plugin": ">=7.0.2",
     "@typescript-eslint/parser": ">=7.0.2",
     "eslint": ">=8.56.0",
@@ -23,6 +24,7 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "ky": "^1.2.2"
+    "ky": "^1.2.2",
+    "qs": "^6.12.0"
   }
 }

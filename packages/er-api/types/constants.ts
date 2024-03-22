@@ -20,3 +20,17 @@ export const enum ErLanguages {
 	Thai = 'Thai',
 	Vietnamese = 'Vietnamese',
 }
+
+export const enum ErDamageTypes {
+	Trap = 'trap',
+	Basic = 'basic',
+	Skill = 'skill',
+	ItemSkill = 'itemSkill',
+	Direct = 'direct',
+	uniqueSkill = 'uniqueSkill',
+}
+
+export const enum ErPlayerTypes {
+	Player = 'player',
+	Bot = 'bot',
+}

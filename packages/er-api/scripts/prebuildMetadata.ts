@@ -1,11 +1,12 @@
 import {writeFile} from 'fs/promises';
 import {ErClient} from '../index.js';
+import {type ErMetaTypes} from '../types/__generated__/erMetaTypes.js';
 
 const writeErMetaTypes = async () => {
 	const client = new ErClient();
 
 	const metaTypesResponse = await client.getMetaTypes();
-	const metaTypes = Object.keys(metaTypesResponse.data);
+	const metaTypes = Object.keys(metaTypesResponse.data) as ErMetaTypes[];
 
 	console.log(`Loaded ${metaTypes.length} meta types`);
 
@@ -13,7 +14,7 @@ const writeErMetaTypes = async () => {
 
 	content += `/* eslint-disable */
 export type ErMetaTypes = ${metaTypes.map(type => `'${type}'`).join(' |\n')} |
-(string & {})
+(string & {__erType: 'erMetaTypes'});
 
 `;
 
