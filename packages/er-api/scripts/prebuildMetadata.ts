@@ -1,9 +1,9 @@
 import {existsSync} from 'fs';
 import {mkdir, writeFile} from 'fs/promises';
-import {ErApi, ErApiQueue} from '../api/index.js';
-import {parseRawTranslation} from '../client/translations.js';
-import {type ErMetaTypes} from '../types/__generated__/erMetaTypes.js';
-import {ErLanguages} from '../types/constants.js';
+import {ErApi, ErApiQueue} from '../src/api/index.js';
+import {parseRawTranslation} from '../src/client/translations.js';
+import {type ErMetaTypes} from '../src/types/__generated__/erMetaTypes.js';
+import {ErLanguages} from '../src/types/constants.js';
 
 const client = new ErApi(undefined, {
 	queue: new ErApiQueue({

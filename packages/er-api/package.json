@@ -5,7 +5,7 @@
   "main": "out/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p ./tsconfig.build.json",
     "prebuild": "node --import=tsimp/import scripts/prebuildMetadata.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

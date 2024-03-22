@@ -1,0 +1,5 @@
+/scripts/
+/.eslintrc.cjs
+/.gitignore
+/tsconfig.build.json
+/tsconfig.json
