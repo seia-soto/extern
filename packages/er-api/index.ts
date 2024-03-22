@@ -1,5 +1,5 @@
 import Ky, {type KyInstance} from 'ky';
-import {getMetaData, getMetaTypes} from './routes/getMetaType.js';
+import {getMetaData, getMetaTypes} from './routes/statics/getMetaType.js';
 
 type Fn = (...args: any[]) => Promise<any>;
 
