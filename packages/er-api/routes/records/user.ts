@@ -1,7 +1,7 @@
 import QueryString from 'qs';
-import {type ErClient} from '../..';
-import {type ErEmptyResponse} from '../../types';
-import {type ErMatchModes} from '../../types/constants';
+import {type ErClient} from '../../index.js';
+import {type ErEmptyResponse} from '../../types/index.js';
+import {type ErMatchModes} from '../../types/constants.js';
 
 export type ErUserIdByNickname = ErEmptyResponse & {
 	user: {

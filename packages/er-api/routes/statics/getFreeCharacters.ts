@@ -1,6 +1,6 @@
 import {type ErClient} from '../..';
-import {type ErMatchModes} from '../../types/constants';
-import {type ErEmptyResponse} from '../../types';
+import {type ErMatchModes} from '../../types/constants.js';
+import {type ErEmptyResponse} from '../../types/index.js';
 
 export type ErFreeCharactersResponse = ErEmptyResponse & {
 	freeCharacters: number[];

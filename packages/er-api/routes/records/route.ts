@@ -1,7 +1,7 @@
 import QueryString from 'qs';
 import {type ErClient} from '../..';
-import {type ErEmptyResponse} from '../../types';
-import {type JsonLiteral} from '../../types/utils';
+import {type ErEmptyResponse} from '../../types/index.js';
+import {type JsonLiteral} from '../../types/utils.js';
 
 export type ErRoute = {
 	recommendedWeaponRoute: {
@@ -46,7 +46,7 @@ export type ErRouteResponse = ErEmptyResponse & {
  * @param routeId The route id to query
  * @returns The route with its data
  */
-export async function getRouteById(this: ErClient, routeId: number) {
+export async function getRoute(this: ErClient, routeId: number) {
 	const response = await this.fetcher.get(`weaponRoutes/recommend/${routeId}`);
 	const json = await response.json<ErRouteResponse>();
 

@@ -1,6 +1,6 @@
 import {type ErClient} from '../..';
-import {type ErResponse} from '../../types';
-import {type ErLanguages} from '../../types/constants';
+import {type ErResponse} from '../../types/index.js';
+import {type ErLanguages} from '../../types/constants.js';
 
 export type ErTranslationResponse = ErResponse<{
 	l10Path: string;

@@ -1,12 +1,12 @@
 import QueryString from 'qs';
-import {type ErClient} from '../..';
+import {type ErClient} from '../../index.js';
 import {
 	type ErDamageTypes, type ErLanguages, type ErMatchModes, type ErPlayerTypes,
-} from '../../types/constants';
+} from '../../types/constants.js';
 import {
 	type DateTime, type JsonLiteral, type Numeric, type Seconds,
-} from '../../types/utils';
-import {type ErEmptyResponse} from '../../types';
+} from '../../types/utils.js';
+import {type ErEmptyResponse} from '../../types/index.js';
 
 export type ErMatchCreditSources = 'PreliminaryPhase'
 | 'TacticalSkillUpgrade'
