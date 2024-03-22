@@ -1,5 +1,7 @@
 import Ky, {type KyInstance} from 'ky';
+import {getFreeCharacters} from './routes/statics/getFreeCharacters.js';
 import {getMetaData, getMetaTypes} from './routes/statics/getMetaType.js';
+import {getTranslationPath} from './routes/statics/getTranslations.js';
 
 type Fn = (...args: any[]) => Promise<any>;
 
@@ -91,6 +93,8 @@ export class ErClient {
 
 	public getMetaTypes: typeof getMetaTypes;
 	public getMetaData: typeof getMetaData;
+	public getFreeCharacters: typeof getFreeCharacters;
+	public getTranslationPath: typeof getTranslationPath;
 
 	constructor(
 		apiKey: string = process.env.ER_API_KEY ?? '',
@@ -118,6 +122,8 @@ export class ErClient {
 
 		this.getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
 		this.getMetaData = this.createRateLimitedFunction(getMetaData);
+		this.getFreeCharacters = this.createRateLimitedFunction(getFreeCharacters);
+		this.getTranslationPath = this.createRateLimitedFunction(getTranslationPath);
 	}
 
 	private createRateLimitedFunction<T extends Fn, R = Awaited<ReturnType<T>>>(fn: T) {
