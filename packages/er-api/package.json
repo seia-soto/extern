@@ -12,6 +12,11 @@
   "keywords": [],
   "author": "HoJeong Go <seia@outlook.kr>",
   "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/seia-soto/extern.git",
+		"directory": "packages/er-api"
+	},
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/qs": "^6.9.14",
