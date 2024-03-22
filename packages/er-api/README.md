@@ -42,6 +42,24 @@ This integration can be disabled by omitting the `queue` property of constructor
 const client = new ErApi(undefined, {});
 ```
 
+**ErTranslationClient**
+
+The EternalReturn translation assets come with custom defined format:
+
+```
+key┃value {0} {1}
+```
+
+We provide a built-in parser to use them easily.
+
+```ts
+import { parseRawTranslation, ErTranslationClient } from 'er-api';
+
+const t = new ErTranslationClient(parseRawTranslation(text));
+
+t.compile(key, 'arg0', 'arg1', ...); // string
+```
+
 # LICENSE
 
 The client library is distributed under MIT license.

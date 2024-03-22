@@ -5,6 +5,7 @@ import {getTranslationPath} from './statics/getTranslations.js';
 import {getMatchesByMatchId, getMatchesByUserId} from './records/match.js';
 import {getRecommendedRoutes, getRoute} from './records/route.js';
 import {getUser, getUserByNickname} from './records/user.js';
+import {type KyOptions} from 'ky/distribution/types/options.js';
 
 type Fn = (...args: any[]) => Promise<any>;
 
@@ -80,7 +81,6 @@ export class ErApiQueue {
 		this.isLocked = true;
 
 		for (; ;) {
-			// eslint-disable-next-line no-await-in-loop
 			if (!await this.process()) {
 				break;
 			}
@@ -116,6 +116,7 @@ export class ErApi {
 		apiKey: string = process.env.ER_API_KEY ?? '',
 		options: {
 			queue?: ErApiQueue;
+			fetcherOptions?: KyOptions;
 		} = {
 			queue: new ErApiQueue({
 				size: 1,
@@ -132,7 +133,11 @@ export class ErApi {
 			},
 		});
 
-		if (options.queue) {
+		if (options.fetcherOptions !== undefined) {
+			this.fetcher = this.fetcher.extend(options.fetcherOptions);
+		}
+
+		if (options.queue !== undefined) {
 			this.queue = options.queue;
 		}
 	}

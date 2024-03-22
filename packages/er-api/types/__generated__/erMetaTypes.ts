@@ -885,6 +885,26 @@ export type ErMetaDataItemMisc = {
 	restoreItemWhenResurrected: boolean;
 };
 
+export type ErMetaDataItemSearchOptionV2 = {
+	code: number;
+	name: string;
+	attackPowerSearch: boolean;
+	attackSpeedSearch: boolean;
+	criticalStrikeSearch: boolean;
+	lifeStealSearch: boolean;
+	normalAttackIncreaseSearch: boolean;
+	skillAttackIncreaseSearch: boolean;
+	cooldownReductionSearch: boolean;
+	maxSpSearch: boolean;
+	spRegenSearch: boolean;
+	defenseSearch: boolean;
+	maxHpSearch: boolean;
+	hpRegenSearch: boolean;
+	damageReductionSearch: boolean;
+	moveSpeedSearch: boolean;
+	sightRangeSearch: boolean;
+};
+
 export type ErMetaDataItemSkill = {
 	itemSkillCode: string;
 	itemSkillGroup: string;
@@ -1247,6 +1267,17 @@ export type ErMetaDataObjectSkin = {
 	target3: string;
 	source4: string;
 	target4: string;
+};
+
+export type ErMetaDataPhase = {
+	code: number;
+	duration: number;
+	turbineLevel: number;
+	turretLevel: number;
+	revival: string;
+	endCondition: string;
+	preAnnounceTime: number;
+	dropAirSupply: string;
 };
 
 export type ErMetaDataPreMadeTeamTierRestrict = {
@@ -1787,116 +1818,118 @@ export type ErMetaDataWeaponTypeInfo = {
 	summonObjectHitDamage: number;
 };
 
-export type ErMetaData = ErMetaDataAchievement |
-ErMetaDataActionCost |
-ErMetaDataArea |
-ErMetaDataAreaAttributes |
-ErMetaDataAreaSound |
-ErMetaDataBattlePassMission |
-ErMetaDataBattlePassReward |
-ErMetaDataBattlePassRewardItem |
-ErMetaDataBattleZoneReward |
-ErMetaDataBooster |
-ErMetaDataBotAiModel |
-ErMetaDataBotCraft |
-ErMetaDataBotMastery |
-ErMetaDataBotNickName |
-ErMetaDataBotSkillBuild |
-ErMetaDataBulletCapacity |
-ErMetaDataCharacter |
-ErMetaDataCharacterAttributes |
-ErMetaDataCharacterExp |
-ErMetaDataCharacterLevelUpStat |
-ErMetaDataCharacterMastery |
-ErMetaDataCharacterModeModifier |
-ErMetaDataCharacterSkillVideos |
-ErMetaDataCharacterSkin |
-ErMetaDataCharacterState |
-ErMetaDataCharacterStateGroup |
-ErMetaDataCharacterVoice |
-ErMetaDataCharacterVoiceRandomCount |
-ErMetaDataCobaltWall |
-ErMetaDataCollectible |
-ErMetaDataContentOpen |
-ErMetaDataControlTypeUse |
-ErMetaDataCriticalChance |
-ErMetaDataDeployingPoint |
-ErMetaDataDropGroup |
-ErMetaDataEffectAndSound |
-ErMetaDataEmblem |
-ErMetaDataEmotion |
-ErMetaDataFootStep |
-ErMetaDataGainExp |
-ErMetaDataGainScore |
-ErMetaDataGameBattleStar |
-ErMetaDataGameConstant |
-ErMetaDataGameRankExp |
-ErMetaDataGameTip |
-ErMetaDataGoods |
-ErMetaDataHookLineProjectile |
-ErMetaDataHowToFindItem |
-ErMetaDataInfusionProduct |
-ErMetaDataItemArmor |
-ErMetaDataItemConsumable |
-ErMetaDataItemMisc |
-ErMetaDataItemSkill |
-ErMetaDataItemSkillGroup |
-ErMetaDataItemSkillLinker |
-ErMetaDataItemSpawn |
-ErMetaDataItemSpecial |
-ErMetaDataItemWeapon |
-ErMetaDataKeyText |
-ErMetaDataLevel |
-ErMetaDataLoadingTip |
-ErMetaDataLowestRankAdjust |
-ErMetaDataMasteryExp |
-ErMetaDataMasteryLevel |
-ErMetaDataMasteryStat |
-ErMetaDataMatchingQueueTier |
-ErMetaDataMission |
-ErMetaDataMonster |
-ErMetaDataMonsterDropGroup |
-ErMetaDataMonsterLevelUpStat |
-ErMetaDataMonsterSpawnLevel |
-ErMetaDataMutantMonsterSpawn |
-ErMetaDataNaviCollectAndHunt |
-ErMetaDataNearByArea |
-ErMetaDataNoise |
-ErMetaDataObjectSkin |
-ErMetaDataPreMadeTeamTierRestrict |
-ErMetaDataProjectileDeflectorSetting |
-ErMetaDataProjectileSetting |
-ErMetaDataRandomEquipment |
-ErMetaDataRecommendedArea |
-ErMetaDataRecommendedItemList |
-ErMetaDataRecommendedList |
-ErMetaDataRestrictedArea |
-ErMetaDataReward |
-ErMetaDataRewardItem |
-ErMetaDataRewindProjectile |
-ErMetaDataSeason |
-ErMetaDataSeasonOutPlayers |
-ErMetaDataSecurityConsolEvent |
-ErMetaDataServerRegion |
-ErMetaDataShopProduct |
-ErMetaDataShopProductItem |
-ErMetaDataSkill |
-ErMetaDataSkillEvolution |
-ErMetaDataSkillEvolutionPoint |
-ErMetaDataSkillGroup |
-ErMetaDataSoundGroup |
-ErMetaDataStartItem |
-ErMetaDataSummonObject |
-ErMetaDataSummonObjectGroup |
-ErMetaDataSummonObjectStat |
-ErMetaDataSupportPack |
-ErMetaDataTouringObjectData |
-ErMetaDataTrait |
-ErMetaDataTransferConsole |
-ErMetaDataTurbine |
-ErMetaDataTutorialReward |
-ErMetaDataVFCredit |
-ErMetaDataWeaponAnimatorLayers |
-ErMetaDataWeaponMount |
-ErMetaDataWeaponRoute |
-ErMetaDataWeaponTypeInfo;
+export type ErMetaData = ErMetaDataAchievement[] |
+ErMetaDataActionCost[] |
+ErMetaDataArea[] |
+ErMetaDataAreaAttributes[] |
+ErMetaDataAreaSound[] |
+ErMetaDataBattlePassMission[] |
+ErMetaDataBattlePassReward[] |
+ErMetaDataBattlePassRewardItem[] |
+ErMetaDataBattleZoneReward[] |
+ErMetaDataBooster[] |
+ErMetaDataBotAiModel[] |
+ErMetaDataBotCraft[] |
+ErMetaDataBotMastery[] |
+ErMetaDataBotNickName[] |
+ErMetaDataBotSkillBuild[] |
+ErMetaDataBulletCapacity[] |
+ErMetaDataCharacter[] |
+ErMetaDataCharacterAttributes[] |
+ErMetaDataCharacterExp[] |
+ErMetaDataCharacterLevelUpStat[] |
+ErMetaDataCharacterMastery[] |
+ErMetaDataCharacterModeModifier[] |
+ErMetaDataCharacterSkillVideos[] |
+ErMetaDataCharacterSkin[] |
+ErMetaDataCharacterState[] |
+ErMetaDataCharacterStateGroup[] |
+ErMetaDataCharacterVoice[] |
+ErMetaDataCharacterVoiceRandomCount[] |
+ErMetaDataCobaltWall[] |
+ErMetaDataCollectible[] |
+ErMetaDataContentOpen[] |
+ErMetaDataControlTypeUse[] |
+ErMetaDataCriticalChance[] |
+ErMetaDataDeployingPoint[] |
+ErMetaDataDropGroup[] |
+ErMetaDataEffectAndSound[] |
+ErMetaDataEmblem[] |
+ErMetaDataEmotion[] |
+ErMetaDataFootStep[] |
+ErMetaDataGainExp[] |
+ErMetaDataGainScore[] |
+ErMetaDataGameBattleStar[] |
+ErMetaDataGameConstant[] |
+ErMetaDataGameRankExp[] |
+ErMetaDataGameTip[] |
+ErMetaDataGoods[] |
+ErMetaDataHookLineProjectile[] |
+ErMetaDataHowToFindItem[] |
+ErMetaDataInfusionProduct[] |
+ErMetaDataItemArmor[] |
+ErMetaDataItemConsumable[] |
+ErMetaDataItemMisc[] |
+ErMetaDataItemSearchOptionV2[] |
+ErMetaDataItemSkill[] |
+ErMetaDataItemSkillGroup[] |
+ErMetaDataItemSkillLinker[] |
+ErMetaDataItemSpawn[] |
+ErMetaDataItemSpecial[] |
+ErMetaDataItemWeapon[] |
+ErMetaDataKeyText[] |
+ErMetaDataLevel[] |
+ErMetaDataLoadingTip[] |
+ErMetaDataLowestRankAdjust[] |
+ErMetaDataMasteryExp[] |
+ErMetaDataMasteryLevel[] |
+ErMetaDataMasteryStat[] |
+ErMetaDataMatchingQueueTier[] |
+ErMetaDataMission[] |
+ErMetaDataMonster[] |
+ErMetaDataMonsterDropGroup[] |
+ErMetaDataMonsterLevelUpStat[] |
+ErMetaDataMonsterSpawnLevel[] |
+ErMetaDataMutantMonsterSpawn[] |
+ErMetaDataNaviCollectAndHunt[] |
+ErMetaDataNearByArea[] |
+ErMetaDataNoise[] |
+ErMetaDataObjectSkin[] |
+ErMetaDataPhase[] |
+ErMetaDataPreMadeTeamTierRestrict[] |
+ErMetaDataProjectileDeflectorSetting[] |
+ErMetaDataProjectileSetting[] |
+ErMetaDataRandomEquipment[] |
+ErMetaDataRecommendedArea[] |
+ErMetaDataRecommendedItemList[] |
+ErMetaDataRecommendedList[] |
+ErMetaDataRestrictedArea[] |
+ErMetaDataReward[] |
+ErMetaDataRewardItem[] |
+ErMetaDataRewindProjectile[] |
+ErMetaDataSeason[] |
+ErMetaDataSeasonOutPlayers[] |
+ErMetaDataSecurityConsolEvent[] |
+ErMetaDataServerRegion[] |
+ErMetaDataShopProduct[] |
+ErMetaDataShopProductItem[] |
+ErMetaDataSkill[] |
+ErMetaDataSkillEvolution[] |
+ErMetaDataSkillEvolutionPoint[] |
+ErMetaDataSkillGroup[] |
+ErMetaDataSoundGroup[] |
+ErMetaDataStartItem[] |
+ErMetaDataSummonObject[] |
+ErMetaDataSummonObjectGroup[] |
+ErMetaDataSummonObjectStat[] |
+ErMetaDataSupportPack[] |
+ErMetaDataTouringObjectData[] |
+ErMetaDataTrait[] |
+ErMetaDataTransferConsole[] |
+ErMetaDataTurbine[] |
+ErMetaDataTutorialReward[] |
+ErMetaDataVFCredit[] |
+ErMetaDataWeaponAnimatorLayers[] |
+ErMetaDataWeaponMount[] |
+ErMetaDataWeaponRoute[] |
+ErMetaDataWeaponTypeInfo[];

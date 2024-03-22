@@ -24,6 +24,9 @@ module.exports = {
 				'*.ts',
 				'*.tsx',
 			],
+			rules: {
+				'no-await-in-loop': 0,
+			},
 		},
 	],
 	parserOptions: {
