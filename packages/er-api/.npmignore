@@ -1,6 +1,7 @@
 /.tsimp/
 /resources/
 /scripts/
+/src/
 /.eslintrc.cjs
 /.gitignore
 /tsconfig.build.json
