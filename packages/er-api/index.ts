@@ -2,6 +2,9 @@ import Ky, {type KyInstance} from 'ky';
 import {getFreeCharacters} from './routes/statics/getFreeCharacters.js';
 import {getMetaData, getMetaTypes} from './routes/statics/getMetaType.js';
 import {getTranslationPath} from './routes/statics/getTranslations.js';
+import {getMatchesByMatchId, getMatchesByUserId} from './routes/records/match.js';
+import {getRecommendedRoutes, getRoute} from './routes/records/route.js';
+import {getUser, getUserByNickname} from './routes/records/user.js';
 
 type Fn = (...args: any[]) => Promise<any>;
 
@@ -91,10 +94,23 @@ export class ErClient {
 	public fetcher: KyInstance;
 	public queue?: ErClientQueue;
 
-	public getMetaTypes: typeof getMetaTypes;
-	public getMetaData: typeof getMetaData;
-	public getFreeCharacters: typeof getFreeCharacters;
-	public getTranslationPath: typeof getTranslationPath;
+	// Match
+	public getMatchesByUserId = this.createRateLimitedFunction(getMatchesByUserId);
+	public getMatchesByMatchId = this.createRateLimitedFunction(getMatchesByMatchId);
+
+	// Route
+	public getRoute = this.createRateLimitedFunction(getRoute);
+	public getRecommendedRoutes = this.createRateLimitedFunction(getRecommendedRoutes);
+
+	// User
+	public getUserByNickname = this.createRateLimitedFunction(getUserByNickname);
+	public getUser = this.createRateLimitedFunction(getUser);
+
+	// Statics
+	public getFreeCharacters = this.createRateLimitedFunction(getFreeCharacters);
+	public getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
+	public getMetaData = this.createRateLimitedFunction(getMetaData);
+	public getTranslationPath = this.createRateLimitedFunction(getTranslationPath);
 
 	constructor(
 		apiKey: string = process.env.ER_API_KEY ?? '',
@@ -119,21 +135,18 @@ export class ErClient {
 		if (options.queue) {
 			this.queue = options.queue;
 		}
-
-		this.getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
-		this.getMetaData = this.createRateLimitedFunction(getMetaData);
-		this.getFreeCharacters = this.createRateLimitedFunction(getFreeCharacters);
-		this.getTranslationPath = this.createRateLimitedFunction(getTranslationPath);
 	}
 
 	private createRateLimitedFunction<T extends Fn, R = Awaited<ReturnType<T>>>(fn: T) {
 		const callee = fn.bind(this);
 
-		if (!this.queue) {
-			return callee;
-		}
-
 		const wrapper = async (...args: Parameters<T>): Promise<R> => new Promise<R>((resolve, reject) => {
+			if (!this.queue) {
+				resolve(callee(...args));
+
+				return;
+			}
+
 			const callback = async () => {
 				callee(...args)
 					.then(r => {
@@ -144,7 +157,7 @@ export class ErClient {
 					});
 			};
 
-			void this.queue!.enqueue(callback);
+			void this.queue.enqueue(callback);
 		});
 
 		return wrapper;

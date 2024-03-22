@@ -1900,4 +1900,3 @@ ErMetaDataWeaponAnimatorLayers |
 ErMetaDataWeaponMount |
 ErMetaDataWeaponRoute |
 ErMetaDataWeaponTypeInfo;
-/* eslint-enable */
