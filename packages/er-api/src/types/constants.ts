@@ -1,6 +1,7 @@
 export const enum ErMatchModes {
 	Normal = 2,
 	Rank = 3,
+	CobaltProtocol = 6,
 }
 
 export const enum ErLanguages {

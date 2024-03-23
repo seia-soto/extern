@@ -1,11 +1,12 @@
 import Ky, {type KyInstance} from 'ky';
+import {type KyOptions} from 'ky/distribution/types/options.js';
+import {getMatchesByMatchId, getMatchesByUserId} from './records/match.js';
+import {getLeaderboard, getRankByUserId} from './records/rank.js';
+import {getRecommendedRoutes, getRoute} from './records/route.js';
+import {getUser, getUserByNickname} from './records/user.js';
 import {getFreeCharacters} from './statics/getFreeCharacters.js';
 import {getMetaData, getMetaTypes} from './statics/getMetaType.js';
 import {getTranslationPath} from './statics/getTranslations.js';
-import {getMatchesByMatchId, getMatchesByUserId} from './records/match.js';
-import {getRecommendedRoutes, getRoute} from './records/route.js';
-import {getUser, getUserByNickname} from './records/user.js';
-import {type KyOptions} from 'ky/distribution/types/options.js';
 
 type Fn = (...args: any[]) => Promise<any>;
 
@@ -97,6 +98,10 @@ export class ErApi {
 	// Match
 	public getMatchesByUserId = this.createRateLimitedFunction(getMatchesByUserId);
 	public getMatchesByMatchId = this.createRateLimitedFunction(getMatchesByMatchId);
+
+	// Rank
+	public getRankByUserId = this.createRateLimitedFunction(getRankByUserId);
+	public getLeaderboard = this.createRateLimitedFunction(getLeaderboard);
 
 	// Route
 	public getRoute = this.createRateLimitedFunction(getRoute);

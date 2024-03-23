@@ -86,11 +86,11 @@ export type ErMetaTypes = ${metaTypes.map(type => `'${type}'`).join(' |\n')} |
 		}
 	}
 
-	content += `export type ErMetaData = ${typeNames.map(type => `ErMetaData${type}[]`).join(' |\n')};
+	content += `export type ErMetaData = ${typeNames.map(type => `ErMetaData${type}`).join(' |\n')};
 
 `;
 
-	await writeFile('types/__generated__/erMetaTypes.ts', content, 'utf8');
+	await writeFile('./src/types/__generated__/erMetaTypes.ts', content, 'utf8');
 };
 
 const writeTranslations = async () => {
