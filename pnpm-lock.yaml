@@ -45,6 +45,9 @@ importers:
       typedoc-material-theme:
         specifier: ^1.0.2
         version: 1.0.2(typedoc@0.25.12)
+      typedoc-plugin-missing-exports:
+        specifier: ^2.2.0
+        version: 2.2.0(typedoc@0.25.12)
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -1324,6 +1327,14 @@ packages:
       typedoc: ^0.25.3
     dependencies:
       '@material/material-color-utilities': 0.2.7
+      typedoc: 0.25.12(typescript@5.4.3)
+    dev: true
+
+  /typedoc-plugin-missing-exports@2.2.0(typedoc@0.25.12):
+    resolution: {integrity: sha512-2+XR1IcyQ5UwXZVJe9NE6HrLmNufT9i5OwoIuuj79VxuA3eYq+Y6itS9rnNV1D7UeQnUSH8kISYD73gHE5zw+w==}
+    peerDependencies:
+      typedoc: 0.24.x || 0.25.x
+    dependencies:
       typedoc: 0.25.12(typescript@5.4.3)
     dev: true
 

@@ -96,26 +96,26 @@ export class ErApi {
 	public queue?: ErApiQueue;
 
 	// Match
-	public getMatchesByUserId = this.createRateLimitedFunction(getMatchesByUserId);
-	public getMatchesByMatchId = this.createRateLimitedFunction(getMatchesByMatchId);
+	public getMatchesByUserId: typeof getMatchesByUserId = this.createRateLimitedFunction(getMatchesByUserId);
+	public getMatchesByMatchId: typeof getMatchesByMatchId = this.createRateLimitedFunction(getMatchesByMatchId);
 
 	// Rank
-	public getRankByUserId = this.createRateLimitedFunction(getRankByUserId);
-	public getLeaderboard = this.createRateLimitedFunction(getLeaderboard);
+	public getRankByUserId: typeof getRankByUserId = this.createRateLimitedFunction(getRankByUserId);
+	public getLeaderboard: typeof getLeaderboard = this.createRateLimitedFunction(getLeaderboard);
 
 	// Route
-	public getRoute = this.createRateLimitedFunction(getRoute);
-	public getRecommendedRoutes = this.createRateLimitedFunction(getRecommendedRoutes);
+	public getRoute: typeof getRoute = this.createRateLimitedFunction(getRoute);
+	public getRecommendedRoutes: typeof getRecommendedRoutes = this.createRateLimitedFunction(getRecommendedRoutes);
 
 	// User
-	public getUserByNickname = this.createRateLimitedFunction(getUserByNickname);
-	public getUser = this.createRateLimitedFunction(getUser);
+	public getUserByNickname: typeof getUserByNickname = this.createRateLimitedFunction(getUserByNickname);
+	public getUser: typeof getUser = this.createRateLimitedFunction(getUser);
 
 	// Statics
-	public getFreeCharacters = this.createRateLimitedFunction(getFreeCharacters);
-	public getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
-	public getMetaData = this.createRateLimitedFunction(getMetaData);
-	public getTranslationPath = this.createRateLimitedFunction(getTranslationPath);
+	public getFreeCharacters: typeof getFreeCharacters = this.createRateLimitedFunction(getFreeCharacters);
+	public getMetaTypes: typeof getMetaTypes = this.createRateLimitedFunction(getMetaTypes);
+	public getMetaData: typeof getMetaData = this.createRateLimitedFunction(getMetaData);
+	public getTranslationPath: typeof getTranslationPath = this.createRateLimitedFunction(getTranslationPath);
 
 	constructor(
 		apiKey: string = process.env.ER_API_KEY ?? '',

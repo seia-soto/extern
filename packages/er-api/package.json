@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",
-    "build:docs": "typedoc --plugin typedoc-material-theme ./src/**/*.ts",
+    "build:docs": "typedoc --plugin typedoc-material-theme --plugin typedoc-plugin-missing-exports ./src/**/*.ts",
     "dump": "node --import=tsimp/import scripts/prebuildMetadata.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,6 +29,7 @@
     "tsimp": "^2.0.11",
     "typedoc": "^0.25.12",
     "typedoc-material-theme": "^1.0.2",
+    "typedoc-plugin-missing-exports": "^2.2.0",
     "typescript": "^5.4.3"
   },
   "dependencies": {

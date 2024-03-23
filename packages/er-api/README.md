@@ -13,6 +13,10 @@ An EternalReturn Open API client.
 
 # Usage
 
+Visit [https://er-api.seia.io](https://er-api.seia.io) to see exports.
+
+**ErApi**
+
 ```ts
 import { ErApi } from 'er-api';
 
