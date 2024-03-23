@@ -16,7 +16,7 @@ export type ErUserIdByNickname = ErEmptyResponse & {
  * @param nickname The nickname of the user
  * @returns The user id including their nickname
  */
-export async function getUserByNickname(this: ErApi, nickname: string) {
+export async function getUserIdByNickname(this: ErApi, nickname: string) {
 	const response = await this.fetcher.get('user/nickname?' + QueryString.stringify({
 		nickname,
 	}));
@@ -25,7 +25,7 @@ export async function getUserByNickname(this: ErApi, nickname: string) {
 	return json;
 }
 
-export type ErUserPlayedCharacterStat = {
+export type ErUserPlayedCharacterStatResource = {
 	characterCode: number;
 	totalGames: number;
 	usages: number;
@@ -36,7 +36,7 @@ export type ErUserPlayedCharacterStat = {
 	averageRank: number;
 };
 
-export type ErUserStat = {
+export type ErUserStatResource = {
 	seasonId: number;
 	userNum: number;
 	matchingMode: ErMatchModes;
@@ -59,11 +59,11 @@ export type ErUserStat = {
 	top3: number;
 	top5: number;
 	top7: number;
-	characterStats: ErUserPlayedCharacterStat[];
+	characterStats: ErUserPlayedCharacterStatResource[];
 };
 
 export type ErUserResponse = ErEmptyResponse & {
-	userStats: ErUserStat[];
+	userStats: ErUserStatResource[];
 };
 
 /**

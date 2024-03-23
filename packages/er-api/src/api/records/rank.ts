@@ -1,7 +1,7 @@
 import {type ErApi} from '../index.js';
 import {type ErEmptyResponse} from '../../types/index.js';
 
-export type ErRank = {
+export type ErRankResource = {
 	userNum: number;
 	mmr: number;
 	nickname: string;
@@ -9,7 +9,7 @@ export type ErRank = {
 };
 
 export type ErRankResponse = ErEmptyResponse & {
-	userRank: ErRank;
+	userRank: ErRankResource;
 };
 
 /**
@@ -28,7 +28,7 @@ export async function getRankByUserId(this: ErApi, userId: number, seasonId: num
 }
 
 export type ErLeaderboardResponse = ErEmptyResponse & {
-	topRanks: ErRank[];
+	topRanks: ErRankResource[];
 };
 
 /**

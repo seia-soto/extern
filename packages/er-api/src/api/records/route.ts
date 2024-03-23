@@ -3,7 +3,7 @@ import {type ErApi} from '../index.js';
 import {type ErEmptyResponse} from '../../types/index.js';
 import {type JsonLiteral} from '../../types/utils.js';
 
-export type ErRoute = {
+export type ErRouteResource = {
 	recommendedWeaponRoute: {
 		id: number;
 		title: string;
@@ -37,7 +37,7 @@ export type ErRoute = {
 };
 
 export type ErRouteResponse = ErEmptyResponse & {
-	result: ErRoute;
+	result: ErRouteResource;
 };
 
 /**
@@ -54,7 +54,7 @@ export async function getRoute(this: ErApi, routeId: number) {
 }
 
 export type ErRecommendedRoutesResponse = ErEmptyResponse & {
-	result: ErRoute[];
+	result: ErRouteResource[];
 };
 
 /**

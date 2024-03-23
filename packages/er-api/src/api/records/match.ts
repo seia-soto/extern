@@ -33,7 +33,7 @@ export type ErMatchEntityTypes = 'Player'
 | 'Alpha'
 | 'Gamma';
 
-export type ErMatch = {
+export type ErMatchResource = {
 	userNum: number;
 	nickname: string;
 	gameId: number;
@@ -244,7 +244,7 @@ export type ErMatch = {
 };
 
 export type ErMatchByUserIdResponse = ErEmptyResponse & {
-	userGames: ErMatch[];
+	userGames: ErMatchResource[];
 	next: number;
 };
 

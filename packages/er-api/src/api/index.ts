@@ -3,7 +3,7 @@ import {type KyOptions} from 'ky/distribution/types/options.js';
 import {getMatchesByMatchId, getMatchesByUserId} from './records/match.js';
 import {getLeaderboard, getRankByUserId} from './records/rank.js';
 import {getRecommendedRoutes, getRoute} from './records/route.js';
-import {getUser, getUserByNickname} from './records/user.js';
+import {getUser, getUserIdByNickname} from './records/user.js';
 import {getFreeCharacters} from './statics/getFreeCharacters.js';
 import {getMetaData, getMetaTypes} from './statics/getMetaType.js';
 import {getTranslationPath} from './statics/getTranslations.js';
@@ -108,7 +108,7 @@ export class ErApi {
 	public getRecommendedRoutes: typeof getRecommendedRoutes = this.createRateLimitedFunction(getRecommendedRoutes);
 
 	// User
-	public getUserByNickname: typeof getUserByNickname = this.createRateLimitedFunction(getUserByNickname);
+	public getUserByNickname: typeof getUserIdByNickname = this.createRateLimitedFunction(getUserIdByNickname);
 	public getUser: typeof getUser = this.createRateLimitedFunction(getUser);
 
 	// Statics

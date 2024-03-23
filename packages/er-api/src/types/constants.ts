@@ -35,3 +35,9 @@ export const enum ErPlayerTypes {
 	Player = 'player',
 	Bot = 'bot',
 }
+
+export const enum ErKnownSeasonTypes {
+	Normal = 0,
+}
+
+export type ErSeasons = ErKnownSeasonTypes | number;
