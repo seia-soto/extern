@@ -10,8 +10,8 @@ export type ErRoute = {
 		userNum: number;
 		userNickname: string;
 		characterCode: number;
-		slotId: 0;
-		weaponType: 9;
+		slotId: number;
+		weaponType: number;
 		weaponCodes: JsonLiteral<number[]>;
 		tacticalSkillGroupCode: number;
 		paths: JsonLiteral<number[]>;
