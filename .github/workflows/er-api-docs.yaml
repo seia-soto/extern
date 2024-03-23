@@ -1,4 +1,7 @@
-name: CI
+name: er-api docs
+
+permissions:
+  contents: write
 
 on:
   push:
