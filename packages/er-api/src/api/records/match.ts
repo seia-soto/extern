@@ -565,7 +565,7 @@ export type ErMatchRankedResource = ErMatchResource & {
 };
 
 export type ErMatchByUserIdResponse = ErEmptyResponse & {
-	userGames: ErMatchResource[];
+	userGames: Array<ErMatchResource | ErMatchRankedResource>;
 	next: number;
 };
 
