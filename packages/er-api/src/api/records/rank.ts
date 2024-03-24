@@ -3,9 +3,13 @@ import {type ErEmptyResponse} from '../../types/index.js';
 import {type ErApi} from '../index.js';
 
 export type ErRankResource = {
+	/** The user identifier */
 	userNum: number;
+	/** The user MMR */
 	mmr: number;
+	/** The user nickname */
 	nickname: string;
+	/** The current position of the user in the bracket */
 	rank: number;
 };
 
