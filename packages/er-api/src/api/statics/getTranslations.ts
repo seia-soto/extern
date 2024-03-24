@@ -13,7 +13,7 @@ export type ErTranslationResponse = ErResponse<{
  * @returns The path to translation text file encoded in UTF8
  */
 export async function getTranslationPath(this: ErApi, language: ErLanguages) {
-	const response = await this.fetcher.get(`l10n/${language}`);
+	const response = await this.fetcher.get(`v1/l10n/${language}`);
 	const json = await response.json<ErTranslationResponse>();
 
 	return json;

@@ -22,7 +22,7 @@ export type ErRankResponse = ErEmptyResponse & {
  * @returns A user rank data with their mmr
  */
 export async function getRankByUserId(this: ErApi, userId: number, seasonId: number, matchmakingTeamType: ErMatchmakingTeamTypes) {
-	const response = await this.fetcher.get(`rank/${userId}/${seasonId}/${matchmakingTeamType}`);
+	const response = await this.fetcher.get(`v1/rank/${userId}/${seasonId}/${matchmakingTeamType}`);
 	const json = await response.json<ErRankResponse>();
 
 	return json;
@@ -40,7 +40,7 @@ export type ErLeaderboardResponse = ErEmptyResponse & {
  * @returns An array of user rank data with their mmr
  */
 export async function getLeaderboard(this: ErApi, seasonId: number, matchmakingTeamType: ErMatchmakingTeamTypes) {
-	const response = await this.fetcher.get(`rank/top/${seasonId}/${matchmakingTeamType}`);
+	const response = await this.fetcher.get(`v1/rank/top/${seasonId}/${matchmakingTeamType}`);
 	const json = await response.json<ErLeaderboardResponse>();
 
 	return json;

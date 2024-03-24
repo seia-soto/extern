@@ -47,7 +47,7 @@ export type ErRouteResponse = ErEmptyResponse & {
  * @returns The route with its data
  */
 export async function getRoute(this: ErApi, routeId: number) {
-	const response = await this.fetcher.get(`weaponRoutes/recommend/${routeId}`);
+	const response = await this.fetcher.get(`v1/weaponRoutes/recommend/${routeId}`);
 	const json = await response.json<ErRouteResponse>();
 
 	return json;
@@ -64,7 +64,7 @@ export type ErRecommendedRoutesResponse = ErEmptyResponse & {
  * @returns An array of recommended routes
  */
 export async function getRecommendedRoutes(this: ErApi, next?: number) {
-	let url = 'weaponRoutes/recommend';
+	let url = 'v1/weaponRoutes/recommend';
 
 	if (next !== undefined) {
 		url += '?' + QueryString.stringify({

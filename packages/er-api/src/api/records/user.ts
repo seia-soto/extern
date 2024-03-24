@@ -17,7 +17,7 @@ export type ErUserIdByNickname = ErEmptyResponse & {
  * @returns The user id including their nickname
  */
 export async function getUserIdByNickname(this: ErApi, nickname: string) {
-	const response = await this.fetcher.get('user/nickname?' + QueryString.stringify({
+	const response = await this.fetcher.get('v1/user/nickname?' + QueryString.stringify({
 		nickname,
 	}));
 	const json = await response.json<ErUserIdByNickname>();

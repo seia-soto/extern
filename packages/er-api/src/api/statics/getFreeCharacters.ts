@@ -13,7 +13,7 @@ export type ErFreeCharactersResponse = ErEmptyResponse & {
  * @returns An array list of character ids
  */
 export async function getFreeCharacters(this: ErApi, matchMode: ErMatchModes) {
-	const response = await this.fetcher.get(`freeCharacters/${matchMode}`);
+	const response = await this.fetcher.get(`v1/freeCharacters/${matchMode}`);
 	const json = await response.json<ErFreeCharactersResponse>();
 
 	return json;

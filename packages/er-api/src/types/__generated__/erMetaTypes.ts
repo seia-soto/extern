@@ -1,171 +1,58 @@
 /* eslint-disable */
-export type ErMetaTypes = 'Achievement' |
-'ActionCost' |
-'ActionCost_Light' |
+export type ErMetaTypes = 'ActionCost' |
 'Area' |
-'AreaAttributes' |
-'AreaSound' |
-'BattlePassMission' |
-'BattlePassReward' |
-'BattlePassRewardItem' |
 'BattleZoneReward' |
-'BattlefieldArea' |
-'Booster' |
-'BotAiModel' |
-'BotCraft' |
-'BotMastery' |
-'BotNickName' |
-'BotSkillBuild' |
 'BulletCapacity' |
-'BulletCapacity_Light' |
 'Character' |
 'CharacterAttributes' |
 'CharacterExp' |
 'CharacterLevelUpStat' |
 'CharacterMastery' |
-'CharacterMastery의 사본' |
 'CharacterModeModifier' |
-'CharacterModeModifier_Light' |
-'CharacterSkillVideos' |
 'CharacterSkin' |
-'CharacterState' |
-'CharacterStateGroup' |
-'CharacterVoice' |
-'CharacterVoiceRandomCount' |
-'Character_Light' |
-'CobaltWall' |
 'Collectible' |
-'ContentOpen' |
-'ControlTypeUse' |
-'CriticalChance' |
-'DeployingPoint' |
-'DiceConsumableSheet' |
-'DiceItemSheet' |
 'DropGroup' |
-'DropGroup_Light' |
-'EffectAndSound' |
-'EliteMonsterSpawn' |
-'Emblem' |
-'Emotion' |
-'EventRewardUser' |
-'FootStep' |
 'GainExp' |
 'GainScore' |
-'GameBattleStar' |
-'GameConstant' |
-'GameRankExp' |
 'GameTip' |
-'Goods' |
-'HealPack' |
-'HookLineProjectile' |
 'HowToFindItem' |
-'HyperSynthesisDevice' |
 'InfusionProduct' |
 'ItemArmor' |
 'ItemConsumable' |
-'ItemConsumable_Light' |
 'ItemMisc' |
-'ItemMisc_Light' |
-'ItemSearchOption' |
 'ItemSearchOptionV2' |
-'ItemSkill' |
-'ItemSkillGroup' |
-'ItemSkillLinker' |
 'ItemSpawn' |
 'ItemSpecial' |
-'ItemSpecial_Light' |
 'ItemWeapon' |
-'KeyText' |
 'Level' |
 'LoadingTip' |
-'LowestRankAdjust' |
 'MasteryExp' |
 'MasteryLevel' |
 'MasteryStat' |
-'MatchingQueueTier' |
-'Mission' |
-'ModRestrictedArea' |
 'Monster' |
 'MonsterDropGroup' |
 'MonsterLevelUpStat' |
-'MonsterLevelUpStat_Light' |
 'MonsterSpawnLevel' |
-'MonsterSpawnLevel_Light' |
-'MonsterVFShard_Light' |
-'Monster_Light' |
-'MutantMonsterSpawn' |
 'NaviCollectAndHunt' |
 'NearByArea' |
-'Noise' |
-'ObjectSkin' |
-'Phase' |
-'PreMadeTeamTierRestrict' |
-'ProductAsset' |
-'ProductCharacter' |
-'ProductInstant' |
-'ProjectileDeflectorSetting' |
-'ProjectileSetting' |
-'ProjectileSetting_Light' |
 'RandomEquipment' |
-'RecommendedArea' |
-'RecommendedItemList' |
 'RecommendedList' |
-'ReplicaPoint' |
-'RestrictedArea' |
-'Reward' |
-'RewardItem' |
-'RewindProjectile' |
 'Season' |
-'SeasonOutPlayers' |
-'SecurityConsolEvent' |
-'ServerRegion' |
-'ShopProduct' |
-'ShopProductItem' |
-'Skill' |
-'SkillEvolution' |
-'SkillEvolutionPoint' |
-'SkillExtension' |
-'SkillGroup' |
-'SoundGroup' |
-'StartItem' |
-'SummonObject' |
-'SummonObjectGroup' |
 'SummonObjectStat' |
-'SummonObjectStat_Light' |
-'SummonObject_Light' |
-'SupportPack' |
-'TimeOfDay' |
-'TouringObjectData' |
+'TacticalSkillSet' |
+'TacticalSkillSetGroup' |
 'Trait' |
 'TransferConsole' |
-'Turbine' |
-'TutorialReward' |
 'VFCredit' |
-'WeaponAnimatorLayers' |
-'WeaponMount' |
-'WeaponRoute' |
 'WeaponTypeInfo' |
 (string & {__erType: 'erMetaTypes'});
-
-export type ErMetaDataAchievement = {
-	code: number;
-	platform: string;
-	name: string;
-	link: string;
-	type: string;
-	count: number;
-	accumulate: boolean;
-	parameter1: string;
-	parameter2: string;
-	parameter3: string;
-	parameter4: string;
-};
 
 export type ErMetaDataActionCost = {
 	code: number;
 	type: string;
 	sp: number;
-	time: number;
+	time1: number;
+	time2: number;
 	actionWaitTime: number;
 	castingAnimTrigger: string;
 	effectCancelCondition: string;
@@ -181,75 +68,7 @@ export type ErMetaDataArea = {
 	areaType: string;
 	isProvideCollectibleItem: boolean;
 	routeCalcBitCode: number;
-};
-
-export type ErMetaDataAreaAttributes = {
-	code: number;
-	modeType: number;
-	areaAttributesType: string;
-	areaAttributesGroup: number;
-	areaAttributesPhase: string;
-	areaAttributesPhaseDuration: number;
-	safeZoneCode: number;
-	activeLastSafeZone: boolean;
-	minimumTeams: number;
-	areaRestriction: boolean;
-	areaIsolationByBarriers: string;
-	captureCheckedInPlayers: boolean;
-	addStateEffectToCapturedPlayers: number;
-	stateEffectDuringPhase: number;
-	penaltyToEscape: string;
-	penaltyValueToEscape: number;
-	penaltyToStay: string;
-	penaltyValueToStay: number;
-	canTeleportToTeamMember: boolean;
-	canRest: boolean;
-};
-
-export type ErMetaDataAreaSound = {
-	code: number;
-	mode: number;
-	condition: string;
-	value: number;
-	loopDelay: number;
-	bGMSound: string;
-	transitionSound: string;
-	transitionStartTime: number;
-	fadeOutTime: number;
-	ambiSoundGroupRoom: string;
-	ambiSoundGroupDay: string;
-	ambiSoundGroupNight: string;
-};
-
-export type ErMetaDataBattlePassMission = {
-	key: number;
-	code: number;
-	seq: number;
-	gameKind: string;
-	achieveType: string;
-	type: string;
-	conditionType: string;
-	conditionItemCode: number;
-	check: string;
-	count: number;
-	rewardId: number;
-	tooltipTextKey: string;
-	tooltipImageName: string;
-};
-
-export type ErMetaDataBattlePassReward = {
-	id: number;
-	adminDesc: string;
-};
-
-export type ErMetaDataBattlePassRewardItem = {
-	id: number;
-	battlePassID: number;
-	passLevel: number;
-	rewardId: number;
-	itemType: string;
-	itemId: number;
-	amount: number;
+	isHyperLoopInstalled: boolean;
 };
 
 export type ErMetaDataBattleZoneReward = {
@@ -260,52 +79,6 @@ export type ErMetaDataBattleZoneReward = {
 	type: string;
 	value: number;
 	selectable: boolean;
-};
-
-export type ErMetaDataBooster = {
-	id: number;
-	itemCode: number;
-	itemType: string;
-	itemConsumptionType: number;
-	amount: number;
-	name: string;
-	sprite: string;
-};
-
-export type ErMetaDataBotAiModel = {
-	id: string;
-	model: string;
-};
-
-export type ErMetaDataBotCraft = {
-	craftSetPoint: number;
-	type: string;
-	easy: string;
-	normal: string;
-	hard: string;
-	pvp: string;
-};
-
-export type ErMetaDataBotMastery = {
-	masterySetPoint: number;
-	type: string;
-	easy: number;
-	normal: number;
-	hard: number;
-	pvp: number;
-};
-
-export type ErMetaDataBotNickName = {
-	botNickName: string;
-	serverRegion: string;
-};
-
-export type ErMetaDataBotSkillBuild = {
-	characterCode: number;
-	easy: string;
-	normal: string;
-	hard: string;
-	pvp: string;
 };
 
 export type ErMetaDataBulletCapacity = {
@@ -334,6 +107,11 @@ export type ErMetaDataCharacter = {
 	hpRegen: number;
 	spRegen: number;
 	attackSpeed: number;
+	attackSpeedRatio: number;
+	increaseBasicAttackDamageRatio: number;
+	skillAmpRatio: number;
+	preventBasicAttackDamagedRatio: number;
+	preventSkillDamagedRatio: number;
 	attackSpeedLimit: number;
 	attackSpeedMin: number;
 	moveSpeed: number;
@@ -343,6 +121,7 @@ export type ErMetaDataCharacter = {
 	uiHeight: number;
 	initStateDisplayIndex: number;
 	localScaleInCutscene: number;
+	localScaleInVictoryScene: string;
 	resource: string;
 	lobbySubObject: string;
 };
@@ -378,6 +157,11 @@ export type ErMetaDataCharacterLevelUpStat = {
 	spRegen: number;
 	attackSpeed: number;
 	moveSpeed: number;
+	attackSpeedRatio: number;
+	increaseBasicAttackDamageRatio: number;
+	skillAmpRatio: number;
+	preventBasicAttackDamagedRatio: number;
+	preventSkillDamagedRatio: number;
 };
 
 export type ErMetaDataCharacterMastery = {
@@ -386,18 +170,14 @@ export type ErMetaDataCharacterMastery = {
 	weapon2: string;
 	weapon3: string;
 	weapon4: string;
-	exploration1: string;
-	exploration2: string;
-	exploration3: string;
-	exploration4: string;
+	combat1: string;
+	combat2: string;
 	survival1: string;
 	survival2: string;
 	survival3: string;
-	survival4: string;
 };
 
 export type ErMetaDataCharacterModeModifier = {
-	code: number;
 	characterCode: number;
 	weaponType: string;
 	soloIncreaseModeDamageRatio: number;
@@ -431,19 +211,13 @@ export type ErMetaDataCharacterModeModifier = {
 	cobaltIncreaseModeDamageToMonsterRatio: number;
 };
 
-export type ErMetaDataCharacterSkillVideos = {
-	code: number;
-	resource: string;
-	otherPlatFormUrl: string;
-	volume: number;
-};
-
 export type ErMetaDataCharacterSkin = {
 	name: string;
 	code: number;
 	characterCode: number;
 	index: number;
 	grade: number;
+	eventFree: boolean;
 	purchaseType: string;
 	effectsPath: string;
 	projectilesPath: string;
@@ -456,188 +230,24 @@ export type ErMetaDataCharacterSkin = {
 	projectilesDeflectorPath: string;
 };
 
-export type ErMetaDataCharacterState = {
-	code: number;
-	group: number;
-	level: number;
-	duration: number;
-	maxStack: number;
-	calculatorParameter: number;
-	nonCalculateStatType: string;
-	nonCalculateStatValue: number;
-	statType1: string;
-	statValue1: number;
-	coefStatType1: string;
-	coefStatValue1: number;
-	statType2: string;
-	statValue2: number;
-	coefStatType2: string;
-	coefStatValue2: number;
-	forcedMoveSpeed: number;
-	canReserve: boolean;
-	overrideIconName: string;
-};
-
-export type ErMetaDataCharacterStateGroup = {
-	group: number;
-	skillId: string;
-	name: string;
-	effectType: string;
-	stateType: string;
-	stateBehaviourType: string;
-	statCalculationType: string;
-	activateStatCalculatorOnCreate: boolean;
-	uiBehaviourType: string;
-	uiVisible: boolean;
-	showFloatingUI: boolean;
-	onlyShowMine: boolean;
-	defaultStack: number;
-	showStackType: string;
-	isAllRemoveStackWhenExpire: boolean;
-	notCheckCasterId: boolean;
-	removeOnDyingCondition: boolean;
-	removeOnDead: boolean;
-	isAddStateOnDead: boolean;
-	forcedMoveSpeedType: string;
-	casterDebuffCombatTargetOn: boolean;
-	targetDebuffCombatTargetOn: boolean;
-	debuffCombatMode: boolean;
-	sharedSightRange: number;
-	eventOnCooldownCheat: string;
-	iconName: string;
-	canImmuned: boolean;
-	exceptionStateWhenRemoveDebuffAll: boolean;
-	notCheckUntargetable: boolean;
-	startEffectAndSound: string;
-	startEffectAndSoundRemoveWhenStateRemove: boolean;
-	finishEffectAndSound: string;
-	lockSkillIdList: string;
-	statCoefSubject: string;
-	lockMoveAction: boolean;
-	lockStopAction: boolean;
-};
-
-export type ErMetaDataCharacterVoice = {
-	code: number;
-	useCase: string;
-	battlePlaying: boolean;
-	globalCoolTime: number;
-	useCaseMinCoolTime: number;
-	useCaseMaxCoolTime: number;
-	onceRepeatIgnore: boolean;
-	maxCount: number;
-	spatial3D: boolean;
-	listener: string;
-	immediatelyPlay: boolean;
-	soundName: string;
-};
-
-export type ErMetaDataCharacterVoiceRandomCount = {
-	code: number;
-	characterCode: number;
-	skinIndex: number;
-	modelIndex: number;
-	useCase: string;
-	skillGroup: string;
-	randomCount: number;
-};
-
-export type ErMetaDataCobaltWall = {
-	groupCode: number;
-	conditionType: string;
-	condition: number;
-};
-
 export type ErMetaDataCollectible = {
 	code: number;
 	cooldown: number;
-	itemCode: string;
+	itemCode1: string;
+	itemCode2: string;
+	probability1: number;
+	probability2: number;
 	dropCount: number;
 	castingActionType: string;
 };
 
-export type ErMetaDataContentOpen = {
-	id: number;
-	content: string;
-	contentOpenType: string;
-	openValue: number;
-	contentTextKey: string;
-};
-
-export type ErMetaDataControlTypeUse = {
-	code: number;
-	controlItemCode: number;
-	interactionObjectCode: number;
-	objectStatus: string;
-	interactionEventCode: number;
-};
-
-export type ErMetaDataCriticalChance = {
-	probability: number;
-	actualUse: number;
-};
-
-export type ErMetaDataDeployingPoint = {
-	phase: number;
-	deployingPoint: number;
-	openGroupsA: number;
-	openGroupsB: number;
-};
-
 export type ErMetaDataDropGroup = {
 	groupCode: number;
-	itemCode: number;
+	itemCode: string;
 	min: number;
 	max: number;
 	probability: number;
 	dropType: string;
-};
-
-export type ErMetaDataEffectAndSound = {
-	code: number;
-	effectPrefabName: string;
-	attachParent: boolean;
-	isDestroyImmediate: boolean;
-	isRemoveParent: boolean;
-	effectParentName: string;
-	lookAtOnwer: boolean;
-	soundMixer: string;
-	soundName: string;
-	soundMaxDistance: number;
-	childSound: boolean;
-};
-
-export type ErMetaDataEmblem = {
-	itemCode: number;
-	itemType: string;
-	name: string;
-	purchaseType: string;
-	useType: string;
-	useStartDtm: string;
-	useEndDtm: string;
-	img: string;
-	effect: string;
-	isDefault: boolean;
-};
-
-export type ErMetaDataEmotion = {
-	code: number;
-	grade: number;
-	purchaseType: string;
-	name: string;
-	sprite: string;
-	prefab: string;
-	sound: string;
-	inputDelayTime: number;
-	defaultSlotType: string;
-};
-
-export type ErMetaDataFootStep = {
-	code: number;
-	material: string;
-	groupName: string;
-	maxDistance: number;
-	specialUsingEvent: boolean;
 };
 
 export type ErMetaDataGainExp = {
@@ -655,59 +265,17 @@ export type ErMetaDataGainScore = {
 	pointsAlly: number;
 };
 
-export type ErMetaDataGameBattleStar = {
-	level: number;
-	normalPoint: number;
-	rankingPoint: number;
-	cobaltPoint: number;
-};
-
-export type ErMetaDataGameConstant = {
-	key: string;
-	value: boolean;
-};
-
-export type ErMetaDataGameRankExp = {
-	rank: number;
-	normalExp: number;
-	rankingExp: number;
-	singleExp: number;
-	cobaltExp: number;
-};
-
 export type ErMetaDataGameTip = {
 	key: number;
 	code: number;
 	gameTipType: string;
+	gameTipCategory: string;
 	sequence: number;
 	titleTextKey: string;
 	contentTextKey: string;
 	imageName: string;
+	'##참고': string;
 	link: string;
-};
-
-export type ErMetaDataGoods = {
-	itemCode: number;
-	itemType: string;
-	purchaseType: string;
-	sprite: string;
-	prefab: string;
-	name: string;
-	grade: number;
-	isDefault: boolean;
-};
-
-export type ErMetaDataHookLineProjectile = {
-	code: number;
-	fireLinePrefab: string;
-	connectionLinePrefab: string;
-	casterLineStickObjectName: string;
-	targetLineStickObjectName: string;
-	connectionDuration: number;
-	connectionMaxRange: number;
-	connectionEffectPrefab: string;
-	connectionSound: string;
-	stretchObjectName: string;
 };
 
 export type ErMetaDataHowToFindItem = {
@@ -742,7 +310,7 @@ export type ErMetaDataInfusionProduct = {
 	icon: string;
 	simpleIcon: string;
 	alertInSpectator: boolean;
-	characterNum: number;
+	characterCodes: string;
 };
 
 export type ErMetaDataItemArmor = {
@@ -761,8 +329,7 @@ export type ErMetaDataItemArmor = {
 	itemUsableType: string;
 	itemUsableValueList: number;
 	exclusiveProducer: number;
-	canNotBeTakeItemFromCorpse: boolean;
-	isCopyableItemToBattleZoneCorpse: boolean;
+	isRemovedFromPlayerCorpseInventoryWhenPlayerKilled: boolean;
 	makeMaterial1: number;
 	makeMaterial2: number;
 	notDisarm: boolean;
@@ -826,6 +393,7 @@ export type ErMetaDataItemArmor = {
 	uniqueLifeSteal: number;
 	uniqueSkillAmpRatio: number;
 	restoreItemWhenResurrected: boolean;
+	creditValueWhenConvertedToBounty: number;
 };
 
 export type ErMetaDataItemConsumable = {
@@ -845,8 +413,7 @@ export type ErMetaDataItemConsumable = {
 	itemUsableType: string;
 	itemUsableValueList: number;
 	exclusiveProducer: number;
-	canNotBeTakeItemFromCorpse: boolean;
-	isCopyableItemToBattleZoneCorpse: boolean;
+	isRemovedFromPlayerCorpseInventoryWhenPlayerKilled: boolean;
 	manufacturableType: number;
 	makeMaterial1: number;
 	makeMaterial2: number;
@@ -858,7 +425,10 @@ export type ErMetaDataItemConsumable = {
 	skillAmpByBuff: number;
 	skillAmpRatioByBuff: number;
 	addStateCode: number;
+	isVPadQuickSlotItem: boolean;
 	restoreItemWhenResurrected: boolean;
+	creditValueWhenConvertedToBounty: number;
+	isReduceLootOnDeath: boolean;
 };
 
 export type ErMetaDataItemMisc = {
@@ -868,6 +438,7 @@ export type ErMetaDataItemMisc = {
 	itemType: string;
 	miscItemType: string;
 	itemGrade: string;
+	gradeBgOverride: string;
 	isCompletedItem: boolean;
 	alertInSpectator: boolean;
 	markingType: string;
@@ -877,12 +448,12 @@ export type ErMetaDataItemMisc = {
 	itemUsableType: string;
 	itemUsableValueList: number;
 	exclusiveProducer: number;
-	canNotBeTakeItemFromCorpse: boolean;
-	isCopyableItemToBattleZoneCorpse: boolean;
+	isRemovedFromPlayerCorpseInventoryWhenPlayerKilled: boolean;
 	manufacturableType: number;
 	makeMaterial1: number;
 	makeMaterial2: number;
 	restoreItemWhenResurrected: boolean;
+	creditValueWhenConvertedToBounty: number;
 };
 
 export type ErMetaDataItemSearchOptionV2 = {
@@ -903,38 +474,13 @@ export type ErMetaDataItemSearchOptionV2 = {
 	damageReductionSearch: boolean;
 	moveSpeedSearch: boolean;
 	sightRangeSearch: boolean;
-};
-
-export type ErMetaDataItemSkill = {
-	itemSkillCode: string;
-	itemSkillGroup: string;
-	skillCodes: string;
-	ingameDescriptionKey: string;
-	outgameDescriptionKey: string;
-	applyWeaponRangeType: string;
-	applyHaveType: string;
-};
-
-export type ErMetaDataItemSkillGroup = {
-	itemSkillGroup: number;
-	nameKey: string;
-	isUniqueSKill: boolean;
-};
-
-export type ErMetaDataItemSkillLinker = {
-	itemCode: number;
-	activeItemSkillCode: number;
-	passiveItemSkillCode1: number;
-	passiveItemSkillCode2: number;
-	displayCooldownItemSkill: string;
-	itemToInventoryCooldown: number;
-	itemToEquipmentCooldown: number;
+	tag1: string;
+	tag2: string;
+	tag3: string;
 };
 
 export type ErMetaDataItemSpawn = {
 	code: number;
-	name: string;
-	areaType: string;
 	areaCode: number;
 	areaSpawnGroup: number;
 	itemCode: number;
@@ -955,17 +501,22 @@ export type ErMetaDataItemSpecial = {
 	craftAnimTrigger: string;
 	stackable: number;
 	initialCount: number;
+	cooldownGroupCode: number;
+	cooldown: number;
 	itemUsableType: string;
 	itemUsableValueList: number;
 	exclusiveProducer: number;
-	canNotBeTakeItemFromCorpse: boolean;
-	isCopyableItemToBattleZoneCorpse: boolean;
+	isRemovedFromPlayerCorpseInventoryWhenPlayerKilled: boolean;
 	manufacturableType: number;
 	makeMaterial1: number;
 	makeMaterial2: number;
 	consumeCount: number;
 	summonCode: number;
+	ghostItemStateGroup: number;
+	isVPadQuickSlotItem: boolean;
 	restoreItemWhenResurrected: boolean;
+	creditValueWhenConvertedToBounty: number;
+	isReduceLootOnDeath: boolean;
 };
 
 export type ErMetaDataItemWeapon = {
@@ -975,6 +526,7 @@ export type ErMetaDataItemWeapon = {
 	itemType: string;
 	weaponType: string;
 	itemGrade: string;
+	gradeBgOverride: string;
 	isCompletedItem: boolean;
 	alertInSpectator: boolean;
 	markingType: string;
@@ -984,8 +536,7 @@ export type ErMetaDataItemWeapon = {
 	itemUsableType: string;
 	itemUsableValueList: number;
 	exclusiveProducer: number;
-	canNotBeTakeItemFromCorpse: boolean;
-	isCopyableItemToBattleZoneCorpse: boolean;
+	isRemovedFromPlayerCorpseInventoryWhenPlayerKilled: boolean;
 	makeMaterial1: number;
 	makeMaterial2: number;
 	notDisarm: boolean;
@@ -999,6 +550,8 @@ export type ErMetaDataItemWeapon = {
 	skillAmpByLevel: number;
 	skillAmpRatio: number;
 	skillAmpRatioByLevel: number;
+	adaptiveForce: number;
+	adaptiveForceByLevel: number;
 	maxHp: number;
 	maxHpByLv: number;
 	hpRegenRatio: number;
@@ -1048,27 +601,7 @@ export type ErMetaDataItemWeapon = {
 	uniqueLifeSteal: number;
 	uniqueSkillAmpRatio: number;
 	restoreItemWhenResurrected: boolean;
-};
-
-export type ErMetaDataKeyText = {
-	key: string;
-	korean: string;
-	english: string;
-	japanese: string;
-	chineseSimplified: string;
-	chineseTraditional: string;
-	french: string;
-	spanish: string;
-	spanishLatin: string;
-	portuguese: string;
-	portugueseLatin: string;
-	indonesian: string;
-	german: string;
-	russian: string;
-	thai: string;
-	vietnamse: string;
-	italian: string;
-	polish: string;
+	creditValueWhenConvertedToBounty: number;
 };
 
 export type ErMetaDataLevel = {
@@ -1076,6 +609,7 @@ export type ErMetaDataLevel = {
 	needExp: number;
 	accumulateExp: number;
 	rewardAcoin: number;
+	reward: number;
 };
 
 export type ErMetaDataLoadingTip = {
@@ -1085,14 +619,6 @@ export type ErMetaDataLoadingTip = {
 	maxLv: number;
 	textKey: string;
 	imageName: string;
-};
-
-export type ErMetaDataLowestRankAdjust = {
-	code: number;
-	teamMode: string;
-	geBeforeMMR: number;
-	ltBeforeMMR: number;
-	adjustRank: number;
 };
 
 export type ErMetaDataMasteryExp = {
@@ -1115,7 +641,6 @@ export type ErMetaDataMasteryLevel = {
 	masteryLevel: number;
 	nextMasteryExp: number;
 	giveLevelExp: number;
-	weaponSkillPoint: number;
 	expGrowthCapRatio: number;
 };
 
@@ -1123,54 +648,25 @@ export type ErMetaDataMasteryStat = {
 	code: number;
 	type: string;
 	characterCode: number;
-	option1: string;
-	optionValue1: number;
-	option2: string;
-	optionValue2: number;
-	option3: string;
-	optionValue3: number;
-};
-
-export type ErMetaDataMatchingQueueTier = {
-	code: number;
-	matchingRegion: string;
-	mmrTier: string;
-	matchingMode: string;
-	teamMode: string;
-	mmrMoreThan: number;
-	mmrLess: number;
-	addBotSec: number;
-	addBotMinRoster: number;
-	firstPaddingSec: number;
-	secondPaddingSec: number;
-	thirdPaddingSec: number;
-	quickStartMinRoster: number;
-	quickStartSec: number;
-};
-
-export type ErMetaDataMission = {
-	key: number;
-	code: number;
-	seq: number;
-	gameKind: string;
-	achieveType: string;
-	type: string;
-	reqMinLevel: number;
-	reqMaxLevel: number;
-	conditionType: string;
-	conditionItemCode: number;
-	check: string;
-	count: number;
-	rewardAcoin: number;
-	rewardExp: number;
-	rewardId: string;
-	probability: number;
-	tooltipTextKey: string;
-	tooltipImageName: string;
+	firstOption: string;
+	firstOptionSection1Value: number;
+	firstOptionSection2Value: number;
+	firstOptionSection3Value: number;
+	firstOptionSection4Value: number;
+	secondOption: string;
+	secondOptionSection1Value: number;
+	secondOptionSection2Value: number;
+	secondOptionSection3Value: number;
+	secondOptionSection4Value: number;
+	thirdOption: string;
+	thirdOptionSection1Value: number;
+	thirdOptionSection2Value: number;
+	thirdOptionSection3Value: number;
+	thirdOptionSection4Value: number;
 };
 
 export type ErMetaDataMonster = {
-	code: number;
+	Code: number;
 	monster: string;
 	isMutant: boolean;
 	grade: string;
@@ -1182,6 +678,8 @@ export type ErMetaDataMonster = {
 	levelUpAmount: number;
 	levelUpMax: number;
 	maxHp: number;
+	maxEp: number;
+	initExtraPoint: number;
 	attackPower: number;
 	defense: number;
 	attackSpeed: number;
@@ -1228,14 +726,6 @@ export type ErMetaDataMonsterSpawnLevel = {
 	spawnLevel: number;
 };
 
-export type ErMetaDataMutantMonsterSpawn = {
-	code: number;
-	monster: string;
-	monsterCode: number;
-	mutantCreateCountValue: number;
-	mutantCreatePercentage: number;
-};
-
 export type ErMetaDataNaviCollectAndHunt = {
 	code: number;
 	itemCode: number;
@@ -1248,157 +738,14 @@ export type ErMetaDataNearByArea = {
 	nearByAreaCode: number;
 };
 
-export type ErMetaDataNoise = {
-	code: number;
-	noiseType: string;
-	pingRange: number;
-	pingChanceRate: number;
-	sfxRange: number;
-	affectedCooldown: boolean;
-};
-
-export type ErMetaDataObjectSkin = {
-	code: number;
-	source1: string;
-	target1: string;
-	source2: string;
-	target2: string;
-	source3: string;
-	target3: string;
-	source4: string;
-	target4: string;
-};
-
-export type ErMetaDataPhase = {
-	code: number;
-	duration: number;
-	turbineLevel: number;
-	turretLevel: number;
-	revival: string;
-	endCondition: string;
-	preAnnounceTime: number;
-	dropAirSupply: string;
-};
-
-export type ErMetaDataPreMadeTeamTierRestrict = {
-	tier: string;
-	iron: boolean;
-	bronze: boolean;
-	silver: boolean;
-	gold: boolean;
-	platinum: boolean;
-	diamond: boolean;
-	mithril: boolean;
-	demigod: boolean;
-	eternity: boolean;
-};
-
-export type ErMetaDataProjectileDeflectorSetting = {
-	code: number;
-	prefabName: string;
-	positionType: string;
-	duration: number;
-	collisionCount: number;
-	affectCollisionToOwner: boolean;
-	affectExplosion: boolean;
-	spawnEffectAndSoundCode: number;
-	collisionSelfEffectAndSoundCode: number;
-	collisionTargetEffectAndSoundCode: number;
-	localDestroyDelay: number;
-	localBaseHeight: number;
-	doHideWithParticleSystem: boolean;
-	collisionObjectType: string;
-	collisionObjectRadius: number;
-	collisionObjectAngle: number;
-	collisionObjectWidth: number;
-	collisionObjectDepth: number;
-	collisionHostileType: number;
-};
-
-export type ErMetaDataProjectileSetting = {
-	code: number;
-	prefabName: string;
-	type: string;
-	suffixItemCode: boolean;
-	enableObjectCollisionCheck: boolean;
-	enableObjectCollsionCheckAfterArrival: boolean;
-	collisionTypeCanNotBeAttacked: string;
-	isPassWall: boolean;
-	isUseCurve: boolean;
-	duration: number;
-	speed: number;
-	distance: number;
-	lifeTimeAfterArrival: number;
-	lifeTimeAfterExplosion: number;
-	doHideWithParticleSystem: boolean;
-	damageType: string;
-	attackSubType: string;
-	penetrationCount: number;
-	isExplosion: boolean;
-	isExplosionWithoutCollision: boolean;
-	explosionRadius: number;
-	attachEffectAndSoundCode: number;
-	shotEffectAndSoundCode: number;
-	shotPoint: string;
-	serverInterpolationPosition: number;
-	hitPoint: string;
-	collisionSelfEffectAndSoundCode: number;
-	arrivedEffectAndSoundCode: number;
-	explosionEffectAndSoundCode: number;
-	collisionTargetEffectAndSoundCode: number;
-	collisionObjectType: string;
-	collisionObjectRadius: number;
-	collisionObjectAngle: number;
-	collisionObjectWidth: number;
-	collisionObjectDepth: number;
-	collisionHostileType: number;
-	isOnlyPlayerCollision: boolean;
-	isBullet: boolean;
-	ignoreLocalMoveXZ: boolean;
-	localMoveType: string;
-	localHighAngleHeight: number;
-	localBaseHeight: number;
-	isInterpolationLocalGroundHeight: boolean;
-	localDestroyDelay: number;
-	isShowMiniMapIcon: boolean;
-	miniMapIconName: string;
-	isDestroyWhenOutSideMap: boolean;
-	isCollisionWithProjectileDeflector: boolean;
-};
-
 export type ErMetaDataRandomEquipment = {
 	code: number;
 	group: string;
 	itemcode: number;
 	weight: number;
 	itemGrade: string;
-	tag1: string;
-	tag2: string;
-	tag3: string;
 	tagMultiplier: number;
 	characterNum: number;
-};
-
-export type ErMetaDataRecommendedArea = {
-	code: number;
-	character: string;
-	characterCode: number;
-	mastery: string;
-	area1Code: number;
-	area2Code: number;
-	area3Code: number;
-	area4Code: number;
-	area5Code: number;
-	recommend: number;
-};
-
-export type ErMetaDataRecommendedItemList = {
-	code: number;
-	character: string;
-	characterCode: number;
-	mastery: string;
-	recommendItemType: string;
-	itemCode: number;
 };
 
 export type ErMetaDataRecommendedList = {
@@ -1412,47 +759,7 @@ export type ErMetaDataRecommendedList = {
 	cobaltDraft: number;
 	cobaltExtraDraft: string;
 	cobaltCanChooseWeapon: boolean;
-	cobaltMainTag: string;
-};
-
-export type ErMetaDataRestrictedArea = {
-	code: number;
-	phase: number;
-	mode: number;
-	durationSeconds: number;
-	finalAreaSafeZoneCode: number;
-	escapeAreaSafeZoneCode: number;
-	restrictedCount: number;
-	battleZoneCount: number;
-	battlezoneMarkBonus: number;
-	clearCount: number;
-	restoreRestrictedCount: number;
-	minimumTeams: number;
-	addTime: number;
-	maxSurvivableTime: number;
-	spawnMeteoriteCount: number;
-};
-
-export type ErMetaDataReward = {
-	id: number;
-	adminDesc: string;
-	expireDays: number;
-};
-
-export type ErMetaDataRewardItem = {
-	id: number;
-	rewardId: number;
-	itemType: string;
-	itemId: number;
-	amount: number;
-};
-
-export type ErMetaDataRewindProjectile = {
-	code: number;
-	type: string;
-	rewindDuration: number;
-	distanceAfterRewind: number;
-	rotateType: string;
+	favoriteMainTag: string;
 };
 
 export type ErMetaDataSeason = {
@@ -1461,218 +768,6 @@ export type ErMetaDataSeason = {
 	seasonStart: string;
 	seasonEnd: string;
 	isCurrent: number;
-};
-
-export type ErMetaDataSeasonOutPlayers = {
-	seasonId: number;
-	userNum: number;
-};
-
-export type ErMetaDataSecurityConsolEvent = {
-	code: number;
-	securityConsoleEvent: string;
-	objectAnimation: string;
-	successRate: number;
-	detectionRate: number;
-};
-
-export type ErMetaDataServerRegion = {
-	code: number;
-	name: string;
-	region: string;
-	pingIP: string;
-};
-
-export type ErMetaDataShopProduct = {
-	id: number;
-	productId: string;
-	productName: string;
-	productType: string;
-	shopType: string;
-	purchaseType: string;
-	iapProductId: string;
-	price: number;
-	productItemId: number;
-	purchaseCondition: string;
-	maxPurchaseCount: string;
-	title: string;
-	content: string;
-	img: string;
-	code: number;
-	dlcDiscount: number;
-	promotionValue1: number;
-	promotionValue2: number;
-};
-
-export type ErMetaDataShopProductItem = {
-	id: number;
-	seq: number;
-	itemType: string;
-	itemCode: number;
-	freeAmount: number;
-	paidAmount: number;
-};
-
-export type ErMetaDataSkill = {
-	code: number;
-	group: number;
-	level: number;
-	activeLevel: number;
-	cost: number;
-	exCost: number;
-	cooldown: number;
-	sequenceTimeOverCooldown: number;
-	stackUseIntervalTime: number;
-	initStack: number;
-	maxStack: number;
-	concentrationCancelCooldown: number;
-	range: number;
-	innerRange: number;
-	length: number;
-	width: number;
-	angle: number;
-	distanceRotateAnchorToCaster: number;
-	overrideIconName: string;
-};
-
-export type ErMetaDataSkillEvolution = {
-	code: number;
-	skillEvolutionType: string;
-	skillGroup: number;
-	prevEvolutionCode: number;
-	level: number;
-	maxEvolutionLevel: number;
-	icon: string;
-};
-
-export type ErMetaDataSkillEvolutionPoint = {
-	code: number;
-	modeType: number;
-	characterCode: number;
-	conditionType: string;
-	conditionValue1: string;
-	conditionValue2: string;
-	conditionValue3: string;
-	conditionValue4: string;
-	pointType: string;
-	point: number;
-	limitPoint: number;
-};
-
-export type ErMetaDataSkillGroup = {
-	group: number;
-	representGroup: number;
-	skillId: string;
-	passiveSkillId: string;
-	name: string;
-	castWaysType: string;
-	targetType: string;
-	castType: string;
-	castingBarType: string;
-	castingBarAddUpTo: string;
-	afterCastingBarType: string;
-	afterCastingBarTimeType: string;
-	castingTime1: number;
-	concentrationTime: number;
-	chargingTime: number;
-	concentrationBarType: string;
-	castingTime2: number;
-	inactionFinishDelayTime: number;
-	actionFinishDelayTime: number;
-	playType: string;
-	interruptType: string;
-	interruptHandlingType: string;
-	canCastingWhileCCState: boolean;
-	aggressiveSkill: boolean;
-	movementSkill: boolean;
-	triggerSkill: boolean;
-	costType: string;
-	costKey: number;
-	exCostType: string;
-	exCostKey: number;
-	fixedActiveCoolDown: boolean;
-	cooldownType: string;
-	cooldownStateFinish: number;
-	useWeaponRange: boolean;
-	stopWhenStartSkill: boolean;
-	stopAttackDuring: boolean;
-	usePreAttackOrHoldAction: boolean;
-	stopWhenCastReserveSkill: boolean;
-	startPrevMoveWhenFinishSkill: boolean;
-	convertMoveInputWhileSkillPlaying: string;
-	canMoveDuringSkillPlaying: boolean;
-	waitForSkillStartPossible: boolean;
-	additionalAction: string;
-	additionalAgainInput: string;
-	additionalAgainInputCount: number;
-	cooldownForAdditionalAgainInput: number;
-	needInputForCast: boolean;
-	sequenceIncreaseType: string;
-	itemCooldownApply: string;
-	sequenceCooldown: number;
-	castWaitTime: number;
-	evolutionable: boolean;
-	stackAble: boolean;
-	impossibleDyingConditionTarget: boolean;
-	guideline: string;
-	subGuideline: string;
-	icon: string;
-	lockSkillIdList: string;
-	showAsDifferentSkill: boolean;
-};
-
-export type ErMetaDataSoundGroup = {
-	code: number;
-	groupName: string;
-	fileName: string;
-	rate: number;
-};
-
-export type ErMetaDataStartItem = {
-	code: number;
-	modeType: number;
-	groupCode: number;
-	itemCode: number;
-	count: number;
-};
-
-export type ErMetaDataSummonObject = {
-	code: number;
-	group: number;
-	name: string;
-	objectType: string;
-	useWeaponMount: boolean;
-	objectStatsType: string;
-	castingActionType: string;
-	isInvincibility: boolean;
-	pickableType: string;
-	ignoredFromTrap: boolean;
-	isPickingTarget: boolean;
-	summonAttackType: string;
-	stateEffect: number;
-	targetHitEffect: string;
-	useAttackerType: string;
-	sightShare: boolean;
-	sightPassWall: boolean;
-	detectShare: boolean;
-	detectInvisible: boolean;
-	isEmpTarget: boolean;
-	canBeHealed: boolean;
-	localDestroyDelay: number;
-	prefabPath: string;
-	childName: string;
-	spawnEffectAndSoundCode: number;
-	destroyEffectAndSoundCode: number;
-	survivorAimType: boolean;
-	showMiniMap: boolean;
-	isBurstTrigger: boolean;
-	customTriggerType: string;
-};
-
-export type ErMetaDataSummonObjectGroup = {
-	group: number;
-	'##Name': string;
-	maxCreate: number;
 };
 
 export type ErMetaDataSummonObjectStat = {
@@ -1702,35 +797,23 @@ export type ErMetaDataSummonObjectStat = {
 	radius: number;
 	uiHeight: number;
 	sightRange: number;
+	sightAngle: number;
 };
 
-export type ErMetaDataSupportPack = {
-	level: number;
-	normalHealPackLevel: number;
-	reinforcedHealPackLevel: number;
-	normalShieldPackLevel: number;
-	reinforcedShieldPackLevel: number;
-};
-
-export type ErMetaDataTouringObjectData = {
+export type ErMetaDataTacticalSkillSet = {
 	code: number;
-	touringObjectType: string;
-	radius: number;
-	pathingRadius: number;
-	uiHeight: number;
-	appearTime: number;
-	isUnstoppable: boolean;
-	isAffectedByLifeStealStatus: boolean;
-	resurrectionTime: number;
-	baseMoveSpeed: number;
-	levelCoefMoveSpeed: number;
-	baseMaxHp: number;
-	levelCoefMaxHp: number;
-	baseDefense: number;
-	levelCoefDefense: number;
-	nameLnKey: string;
-	deadPlaySoundEffectCode: number;
-	localDestroyDelay: number;
+	nextUpgradecode: number;
+	upgradeCredit: number;
+	upgradeMaterial: number;
+	skillCode: number;
+};
+
+export type ErMetaDataTacticalSkillSetGroup = {
+	group: number;
+	modeType: number;
+	startCode: number;
+	equipWithStart: boolean;
+	icon: string;
 };
 
 export type ErMetaDataTrait = {
@@ -1738,7 +821,6 @@ export type ErMetaDataTrait = {
 	openAccountLv: number;
 	traitGroup: string;
 	traitType: string;
-	traitGameMode: string;
 	active: boolean;
 };
 
@@ -1749,24 +831,10 @@ export type ErMetaDataTransferConsole = {
 	transferTimeSafeArea: number;
 	subtractTrasferTimeRestrictedArea: number;
 	manufactureCooldown: number;
+	availableTimeForPurchase: number;
 	consumeVFCredit: number;
-	limiteCount: number;
+	limitCount: number;
 	traitSale: boolean;
-};
-
-export type ErMetaDataTurbine = {
-	code: number;
-	sightRange: number;
-	soundDistance: number;
-	effectPrefabName: string;
-	activeEffectPrefabName: string;
-};
-
-export type ErMetaDataTutorialReward = {
-	tutorialKey: number;
-	goodsType: string;
-	collectionCode: number;
-	amount: number;
 };
 
 export type ErMetaDataVFCredit = {
@@ -1779,37 +847,6 @@ export type ErMetaDataVFCredit = {
 	acquireTeam: number;
 };
 
-export type ErMetaDataWeaponAnimatorLayers = {
-	code: number;
-	objectType: string;
-	characterCode: number;
-	weaponType: string;
-	layerName: string;
-	layerWeight: number;
-};
-
-export type ErMetaDataWeaponMount = {
-	code: number;
-	objectType: string;
-	characterCode: number;
-	skinIndex: number;
-	ownerCharacterCode: number;
-	weaponType: string;
-	prefab: string;
-	animationController: string;
-	mountType: string;
-	scale: number;
-};
-
-export type ErMetaDataWeaponRoute = {
-	characterCode: number;
-	weaponType: number;
-	slotId: number;
-	title: string;
-	weaponCodes: string;
-	paths: string;
-};
-
 export type ErMetaDataWeaponTypeInfo = {
 	type: string;
 	attackSpeed: number;
@@ -1818,21 +855,9 @@ export type ErMetaDataWeaponTypeInfo = {
 	summonObjectHitDamage: number;
 };
 
-export type ErMetaData = ErMetaDataAchievement |
-ErMetaDataActionCost |
+export type ErMetaData = ErMetaDataActionCost |
 ErMetaDataArea |
-ErMetaDataAreaAttributes |
-ErMetaDataAreaSound |
-ErMetaDataBattlePassMission |
-ErMetaDataBattlePassReward |
-ErMetaDataBattlePassRewardItem |
 ErMetaDataBattleZoneReward |
-ErMetaDataBooster |
-ErMetaDataBotAiModel |
-ErMetaDataBotCraft |
-ErMetaDataBotMastery |
-ErMetaDataBotNickName |
-ErMetaDataBotSkillBuild |
 ErMetaDataBulletCapacity |
 ErMetaDataCharacter |
 ErMetaDataCharacterAttributes |
@@ -1840,96 +865,39 @@ ErMetaDataCharacterExp |
 ErMetaDataCharacterLevelUpStat |
 ErMetaDataCharacterMastery |
 ErMetaDataCharacterModeModifier |
-ErMetaDataCharacterSkillVideos |
 ErMetaDataCharacterSkin |
-ErMetaDataCharacterState |
-ErMetaDataCharacterStateGroup |
-ErMetaDataCharacterVoice |
-ErMetaDataCharacterVoiceRandomCount |
-ErMetaDataCobaltWall |
 ErMetaDataCollectible |
-ErMetaDataContentOpen |
-ErMetaDataControlTypeUse |
-ErMetaDataCriticalChance |
-ErMetaDataDeployingPoint |
 ErMetaDataDropGroup |
-ErMetaDataEffectAndSound |
-ErMetaDataEmblem |
-ErMetaDataEmotion |
-ErMetaDataFootStep |
 ErMetaDataGainExp |
 ErMetaDataGainScore |
-ErMetaDataGameBattleStar |
-ErMetaDataGameConstant |
-ErMetaDataGameRankExp |
 ErMetaDataGameTip |
-ErMetaDataGoods |
-ErMetaDataHookLineProjectile |
 ErMetaDataHowToFindItem |
 ErMetaDataInfusionProduct |
 ErMetaDataItemArmor |
 ErMetaDataItemConsumable |
 ErMetaDataItemMisc |
 ErMetaDataItemSearchOptionV2 |
-ErMetaDataItemSkill |
-ErMetaDataItemSkillGroup |
-ErMetaDataItemSkillLinker |
 ErMetaDataItemSpawn |
 ErMetaDataItemSpecial |
 ErMetaDataItemWeapon |
-ErMetaDataKeyText |
 ErMetaDataLevel |
 ErMetaDataLoadingTip |
-ErMetaDataLowestRankAdjust |
 ErMetaDataMasteryExp |
 ErMetaDataMasteryLevel |
 ErMetaDataMasteryStat |
-ErMetaDataMatchingQueueTier |
-ErMetaDataMission |
 ErMetaDataMonster |
 ErMetaDataMonsterDropGroup |
 ErMetaDataMonsterLevelUpStat |
 ErMetaDataMonsterSpawnLevel |
-ErMetaDataMutantMonsterSpawn |
 ErMetaDataNaviCollectAndHunt |
 ErMetaDataNearByArea |
-ErMetaDataNoise |
-ErMetaDataObjectSkin |
-ErMetaDataPhase |
-ErMetaDataPreMadeTeamTierRestrict |
-ErMetaDataProjectileDeflectorSetting |
-ErMetaDataProjectileSetting |
 ErMetaDataRandomEquipment |
-ErMetaDataRecommendedArea |
-ErMetaDataRecommendedItemList |
 ErMetaDataRecommendedList |
-ErMetaDataRestrictedArea |
-ErMetaDataReward |
-ErMetaDataRewardItem |
-ErMetaDataRewindProjectile |
 ErMetaDataSeason |
-ErMetaDataSeasonOutPlayers |
-ErMetaDataSecurityConsolEvent |
-ErMetaDataServerRegion |
-ErMetaDataShopProduct |
-ErMetaDataShopProductItem |
-ErMetaDataSkill |
-ErMetaDataSkillEvolution |
-ErMetaDataSkillEvolutionPoint |
-ErMetaDataSkillGroup |
-ErMetaDataSoundGroup |
-ErMetaDataStartItem |
-ErMetaDataSummonObject |
-ErMetaDataSummonObjectGroup |
 ErMetaDataSummonObjectStat |
-ErMetaDataSupportPack |
-ErMetaDataTouringObjectData |
+ErMetaDataTacticalSkillSet |
+ErMetaDataTacticalSkillSetGroup |
 ErMetaDataTrait |
 ErMetaDataTransferConsole |
-ErMetaDataTurbine |
-ErMetaDataTutorialReward |
 ErMetaDataVFCredit |
-ErMetaDataWeaponAnimatorLayers |
-ErMetaDataWeaponMount |
-ErMetaDataWeaponRoute |
 ErMetaDataWeaponTypeInfo;

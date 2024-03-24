@@ -258,7 +258,7 @@ export type ErMatchByUserIdResponse = ErEmptyResponse & {
  * @returns An array of the match joined by the user
  */
 export async function getMatchesByUserId(this: ErApi, userId: number, next?: number) {
-	let url = `user/games/${userId}`;
+	let url = `v1/user/games/${userId}`;
 
 	if (next !== undefined) {
 		url += '?' + QueryString.stringify({
@@ -280,7 +280,7 @@ export async function getMatchesByUserId(this: ErApi, userId: number, next?: num
  * @returns An array of match data in each participated user's perspective
  */
 export async function getMatchesByMatchId(this: ErApi, matchId: number, next?: number) {
-	let url = `games/${matchId}`;
+	let url = `v1/games/${matchId}`;
 
 	if (next !== undefined) {
 		url += '?' + QueryString.stringify({
