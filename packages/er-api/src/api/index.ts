@@ -130,7 +130,7 @@ export class ErApi {
 		},
 	) {
 		this.fetcher = Ky.extend({
-			prefixUrl: 'https://open-api.bser.io/v1',
+			prefixUrl: 'https://open-api.bser.io/',
 			headers: {
 				accept: 'application/json',
 				'user-agent': 'er-api/v0 (node; seia-soto) ky/v1',
