@@ -29,9 +29,10 @@ export enum ErMatchmakingTeamTypes {
 	CobaltProtocol = 4,
 }
 
-export enum ErPlayerTypes {
+export enum ErDeathCauseProviders {
 	Player = 'player',
-	Bot = 'bot',
+	Monster = 'wildAnimal',
+	RestrictionArea = 'restrictedArea',
 }
 
 export enum ErKnownSeasons {
@@ -126,4 +127,10 @@ export enum ErDamageTypes {
 	Skill = 'skill',
 	Unique = 'itemSkill',
 	Fixed = 'direct',
+}
+
+export enum ErEscapeStates {
+	Fail = 1,
+	Death,
+	Success,
 }
