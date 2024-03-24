@@ -4,6 +4,13 @@ export const enum ErMatchModes {
 	CobaltProtocol = 6,
 }
 
+export const enum ErMatchmakingTeamTypes {
+	Solo = 1,
+	Duo = 2,
+	Squad = 3,
+	CobaltProtocol = 4,
+}
+
 export const enum ErLanguages {
 	Korean = 'Korean',
 	English = 'English',

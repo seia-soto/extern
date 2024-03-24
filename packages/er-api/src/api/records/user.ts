@@ -1,7 +1,7 @@
 import QueryString from 'qs';
-import {type ErApi} from '../index.js';
+import {type ErMatchmakingTeamTypes, type ErMatchModes} from '../../types/constants.js';
 import {type ErEmptyResponse} from '../../types/index.js';
-import {type ErMatchModes} from '../../types/constants.js';
+import {type ErApi} from '../index.js';
 
 export type ErUserIdByNickname = ErEmptyResponse & {
 	user: {
@@ -40,7 +40,7 @@ export type ErUserStatResource = {
 	seasonId: number;
 	userNum: number;
 	matchingMode: ErMatchModes;
-	matchingTeamMode: number;
+	matchingTeamMode: ErMatchmakingTeamTypes;
 	nickname: string;
 	rank: number;
 	rankSize: number;

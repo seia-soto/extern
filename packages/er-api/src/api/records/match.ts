@@ -1,12 +1,14 @@
 import QueryString from 'qs';
-import {type ErApi} from '../index.js';
 import {
-	type ErDamageTypes, type ErLanguages, type ErMatchModes, type ErPlayerTypes,
+	type ErDamageTypes, type ErLanguages, type ErMatchModes,
+	type ErMatchmakingTeamTypes,
+	type ErPlayerTypes,
 } from '../../types/constants.js';
+import {type ErEmptyResponse} from '../../types/index.js';
 import {
 	type DateTime, type JsonLiteral, type Numeric, type Seconds,
 } from '../../types/utils.js';
-import {type ErEmptyResponse} from '../../types/index.js';
+import {type ErApi} from '../index.js';
 
 export type ErMatchCreditSources = 'PreliminaryPhase'
 | 'TacticalSkillUpgrade'
@@ -39,7 +41,7 @@ export type ErMatchResource = {
 	gameId: number;
 	seasonId: number;
 	matchingMode: ErMatchModes;
-	matchingTeamMode: number;
+	matchingTeamMode: ErMatchmakingTeamTypes;
 	characterNum: number;
 	skinCode: number;
 	characterLevel: number;
