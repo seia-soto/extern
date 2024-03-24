@@ -16,31 +16,31 @@ export const enum ErLanguages {
 	Vietnamese = 'Vietnamese',
 }
 
-export const enum ErMatchModes {
+export enum ErMatchModes {
 	Normal = 2,
-	Rank = 3,
+	Ranked = 3,
 	CobaltProtocol = 6,
 }
 
-export const enum ErMatchmakingTeamTypes {
+export enum ErMatchmakingTeamTypes {
 	Solo = 1,
 	Duo = 2,
 	Squad = 3,
 	CobaltProtocol = 4,
 }
 
-export const enum ErPlayerTypes {
+export enum ErPlayerTypes {
 	Player = 'player',
 	Bot = 'bot',
 }
 
-export const enum ErKnownSeasons {
+export enum ErKnownSeasons {
 	Normal = 0,
 }
 
 export type ErSeasons = ErKnownSeasons | number;
 
-export const enum ErMasteryTypes {
+export enum ErMasteryTypes {
 	None = 0,
 	Glove,
 	Tonfa,
@@ -73,7 +73,7 @@ export const enum ErMasteryTypes {
 	Hunt,
 }
 
-export const enum ErEquipments {
+export enum ErEquipments {
 	Weapon = 0,
 	Suit,
 	Headgear,
@@ -82,7 +82,7 @@ export const enum ErEquipments {
 	Accessories, // Unused
 }
 
-export const enum ErCollectibles {
+export enum ErCollectibles {
 	Watersource = 1,
 	Branch,
 	Rock,
@@ -120,11 +120,10 @@ export enum ErTacticalSkillMappings {
 	'Skill/Group/Name/4511000' = 500110,
 }
 
-export const enum ErDamageTypes {
+export enum ErDamageTypes {
 	Trap = 'trap',
-	Basic = 'basic',
+	Basic = 'basic', // AA; Auto Attack; Basic Attack
 	Skill = 'skill',
-	ItemSkill = 'itemSkill',
-	Direct = 'direct',
-	uniqueSkill = 'uniqueSkill',
+	Unique = 'itemSkill',
+	Fixed = 'direct',
 }
